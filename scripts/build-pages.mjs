@@ -300,9 +300,13 @@ const PUBLICADOS = POSTS.filter((p) => p.publicado).sort((a, b) => b.data.locale
 const urlPost = (p) => `${SITE}/blog/${p.slug}/`;
 const ORGANIZACAO = { "@type": "Organization", name: "Reload Estúdios", url: `${SITE}/`, logo: { "@type": "ImageObject", url: `${SITE}/assets/logo.png`, width: 512, height: 512 } };
 
+/** Caminho público da capa do artigo (ou nada, se o artigo não tiver capa). */
+const capaUrl = (p) => (p.capa ? `/blog/${p.slug}/${p.capa.file}` : null);
+
 function cardPost(p) {
-  return `        <li class="post-card">
-          <a href="/blog/${p.slug}/">
+  return `        <li class="post-card${p.capa ? " post-card--capa" : ""}">
+          <a href="/blog/${p.slug}/">${p.capa ? `
+            <img class="post-card__img" src="${capaUrl(p)}" alt="" loading="lazy" width="${p.capa.width}" height="${p.capa.height}">` : ""}
             <span class="post-card__meta"><span class="feature-chip"><span class="feature-chip__mark" aria-hidden="true"></span>${esc(p.categoria)}</span><span>${leitura(p.corpo)} min de leitura</span></span>
             <h3>${esc(p.titulo)}</h3>
             <p>${esc(p.descricao)}</p>
@@ -370,7 +374,7 @@ function paginaPost(p) {
       description: p.descricao,
       url,
       mainEntityOfPage: url,
-      image: `${SITE}/assets/og.png`,
+      image: p.capa ? `${SITE}${capaUrl(p)}` : `${SITE}/assets/og.png`,
       datePublished: p.data,
       dateModified: atualizado,
       inLanguage: "pt-BR",
@@ -392,7 +396,8 @@ function paginaPost(p) {
 <meta property="article:modified_time" content="${atualizado}">
 <meta property="article:section" content="${esc(p.categoria)}">`;
 
-  return `${cabeca({ title: tituloSeo(p), description: p.descricao, url, schemas, ogType: "article", extra })}
+  const og = p.capa ? { image: `${SITE}${capaUrl(p)}`, imageAlt: p.capa.alt } : {};
+  return `${cabeca({ title: tituloSeo(p), description: p.descricao, url, schemas, ogType: "article", extra, ...og })}
 <main>
   <article class="post" aria-labelledby="titulo">
     <header class="post__head">
@@ -404,7 +409,8 @@ function paginaPost(p) {
         <p class="post__meta"><span class="feature-chip"><span class="feature-chip__mark" aria-hidden="true"></span>${esc(p.categoria)}</span><time datetime="${p.data}">${dataBR(p.data)}</time><span>${leitura(p.corpo)} min de leitura</span></p>
       </div>
     </header>
-    <div class="prose">
+${p.capa ? `    <figure class="post__cover"><img src="${capaUrl(p)}" alt="${esc(p.capa.alt)}" width="${p.capa.width}" height="${p.capa.height}" fetchpriority="high"></figure>
+` : ""}    <div class="prose">
 ${p.corpo.trim()}
     </div>
 ${servico ? `    <aside class="post__cta" aria-label="Serviço relacionado">

@@ -4,6 +4,10 @@
 // - publicado: false tira o artigo do site, da lista e do sitemap
 // - servico: slug da página de serviço indicada no fim do artigo
 // - corpo: HTML simples (h2, p, ul/ol, a, strong). Links internos começam com "/".
+// - capa (opcional): { file: "capa-<slug>-1200x630.webp", alt, width: 1200, height: 630 }, arquivo em blog/<slug>/.
+//   Vira a imagem do topo do artigo, a miniatura da lista e a prévia de compartilhamento.
+// - imagem no meio do texto: dentro do corpo, use
+//   <figure class="post-figure"><img src="/blog/<slug>/corpo-<slug>-1520x855.webp" alt="..." width="1520" height="855" loading="lazy"></figure>
 
 export const POSTS = [
   {
