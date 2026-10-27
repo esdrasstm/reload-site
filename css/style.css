@@ -651,3 +651,5 @@ a { color: inherit; text-decoration: none; }
 @media (min-width: 900px) { .footer__grid { grid-template-columns: minmax(0, 1.3fr) repeat(3, minmax(0, 1fr)); } }
 @media (max-width: 899px) { .footer__col--services { order: 3; } }
 .hero__local { margin: -8px 0 0; font-size: 13px; letter-spacing: 0.04em; color: var(--muted); }
+.footer__maps, .testimonial__source { color: inherit; text-decoration: underline; text-decoration-color: rgba(244, 244, 244, 0.35); text-underline-offset: 3px; transition: color 0.2s, text-decoration-color 0.2s; }
+.footer__maps:hover, .testimonial__source:hover { color: var(--marca); text-decoration-color: var(--marca); }

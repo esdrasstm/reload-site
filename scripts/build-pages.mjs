@@ -8,6 +8,8 @@ import { DEPOIMENTOS, FAQ_LOCAL, PROJETOS, SERVICOS } from "./servicos.mjs";
 
 // Onde a Reload está e quem ela atende (vai para os dados estruturados).
 const ENDERECO = { "@type": "PostalAddress", addressLocality: "Brasília", addressRegion: "DF", addressCountry: "BR" };
+/** Perfil da Reload no Google (Perfil da Empresa / Maps). */
+const PERFIL_GOOGLE = "https://maps.google.com/?cid=13622037606905737935";
 const AREA = [{ "@type": "City", name: "Brasília" }, { "@type": "Country", name: "Brasil" }];
 const faqDe = (s) => [...s.faq, FAQ_LOCAL];
 
@@ -49,7 +51,7 @@ function schemas(s) {
       description: s.description,
       url,
       areaServed: AREA,
-      provider: { "@type": "ProfessionalService", name: "Reload Estúdio", url: `${SITE}/`, telephone: "+55-61-98358-6190", address: ENDERECO },
+      provider: { "@type": "ProfessionalService", name: "Reload Estúdio", url: `${SITE}/`, telephone: "+55-61-98358-6190", address: ENDERECO, hasMap: PERFIL_GOOGLE, sameAs: ["https://instagram.com/reloadestudio", PERFIL_GOOGLE] },
     },
     {
       "@context": "https://schema.org",
@@ -240,6 +242,7 @@ ${SERVICOS.map((o) => `          <li><a href="/${o.slug}/">${esc(o.rotulo)}</a><
           <li><img src="/assets/ic-phone.svg" alt=""><div><small>Telefone</small>(61) 98358-6190</div></li>
           <li><img src="/assets/ic-instagram.svg" alt=""><div><small>Instagram</small>@reloadestudio</div></li>
           <li><img src="/assets/ic-clock.svg" alt=""><div><small>Horário de Atendimento</small>Seg - Sex: 9h às 18h</div></li>
+          <li><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#ff2e00" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg><div><small>Google</small><a class="footer__maps" href="${PERFIL_GOOGLE}" target="_blank" rel="noopener">Ver perfil e avaliações</a></div></li>
         </ul>
       </div>
       <div class="footer__col footer__col--social">
