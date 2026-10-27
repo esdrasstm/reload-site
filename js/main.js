@@ -8,7 +8,6 @@
   initForm();
   initButtonLight();
   initHeroCards();
-  initReveal();
   initTestimonials();
 
   // Sem GSAP (CDN bloqueado) ou com movimento reduzido: mostra tudo parado.
@@ -46,23 +45,6 @@
         });
       });
     });
-  }
-
-  /* ---------- Cards de serviço aparecem ao entrar na tela ---------- */
-  function initReveal() {
-    const items = document.querySelectorAll(".reveal");
-    if (!("IntersectionObserver" in window)) {
-      items.forEach((el) => el.classList.add("is-visible"));
-      return;
-    }
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add("is-visible");
-        io.unobserve(entry.target);
-      });
-    }, { threshold: 0.2 });
-    items.forEach((el) => io.observe(el));
   }
 
   /* ---------- Depoimentos: setas trocam o depoimento (só aparecem com 2 ou mais) ---------- */
