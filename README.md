@@ -1,6 +1,6 @@
-# Reload Estúdio
+# Reload Estúdios
 
-Site da Reload Estúdio: [reloadestudios.com.br](https://reloadestudios.com.br)
+Site da Reload Estúdios: [reloadestudios.com.br](https://reloadestudios.com.br)
 
 HTML, CSS e JavaScript puros, sem etapa de build no servidor. As animações usam o GSAP via CDN.
 

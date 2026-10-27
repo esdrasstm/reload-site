@@ -51,7 +51,7 @@ function schemas(s) {
       description: s.description,
       url,
       areaServed: AREA,
-      provider: { "@type": "ProfessionalService", name: "Reload Estúdio", url: `${SITE}/`, telephone: "+55-61-98358-6190", address: ENDERECO, hasMap: PERFIL_GOOGLE, sameAs: ["https://instagram.com/reloadestudio", PERFIL_GOOGLE] },
+      provider: { "@type": "ProfessionalService", name: "Reload Estúdios", url: `${SITE}/`, telephone: "+55-61-98358-6190", address: ENDERECO, hasMap: PERFIL_GOOGLE, sameAs: ["https://instagram.com/reloadestudio", PERFIL_GOOGLE] },
     },
     {
       "@context": "https://schema.org",
@@ -97,14 +97,14 @@ function pagina(s) {
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
-<meta property="og:site_name" content="Reload Estúdio">
+<meta property="og:site_name" content="Reload Estúdios">
 <meta property="og:title" content="${esc(s.title)}">
 <meta property="og:description" content="${esc(s.description)}">
 <meta property="og:url" content="${url}">
 <meta property="og:image" content="${og}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Reload Estúdio: identidade visual, site e redes sociais no mesmo padrão profissional">
+<meta property="og:image:alt" content="Reload Estúdios: identidade visual, site e redes sociais no mesmo padrão profissional">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="${esc(s.title)}">
 <meta name="twitter:description" content="${esc(s.description)}">
@@ -121,7 +121,7 @@ ${schemas(s).map((o) => `<script type="application/ld+json">\n${json(o)}\n</scri
 <a class="ribbon" href="/#orcamento">Orçamento personalizado em até 24h <span aria-hidden="true">→</span></a>
 
 <header class="nav" id="nav">
-  <a class="nav__logo" href="/" aria-label="Reload Estúdio, início"><img src="/assets/r-symbol.svg" alt=""></a>
+  <a class="nav__logo" href="/" aria-label="Reload Estúdios, início"><img src="/assets/r-symbol.svg" alt=""></a>
   <nav class="nav__links" aria-label="Principal">
     <a href="/#projetos">PROJETOS</a>
     <a href="/#duvidas">DÚVIDAS</a>

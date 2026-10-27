@@ -60,7 +60,7 @@ export const SERVICOS = [
   {
     slug: "criacao-de-sites",
     rotulo: "Criação de sites",
-    title: "Criação de sites profissionais em Brasília | Reload Estúdio",
+    title: "Criação de sites profissionais em Brasília | Reload Estúdios",
     description:
       "Criação de sites institucionais em Brasília e para todo o Brasil: com o visual da sua marca, rápidos e feitos para aparecer no Google.",
     h1: "Criação de sites profissionais",
@@ -85,7 +85,7 @@ export const SERVICOS = [
   {
     slug: "landing-page",
     rotulo: "Landing pages",
-    title: "Criação de landing page em Brasília | Reload Estúdio",
+    title: "Criação de landing page em Brasília | Reload Estúdios",
     description:
       "Landing pages em Brasília e para todo o Brasil: um objetivo claro, carregamento rápido e o visual da sua marca, prontas para seus anúncios.",
     h1: "Criação de landing pages",
@@ -107,7 +107,7 @@ export const SERVICOS = [
   {
     slug: "identidade-visual",
     rotulo: "Identidade visual",
-    title: "Identidade visual e logotipo em Brasília | Reload Estúdio",
+    title: "Identidade visual e logotipo em Brasília | Reload Estúdios",
     description:
       "Identidade visual e logotipo em Brasília e para todo o Brasil: cores, tipografia e aplicações para sua marca ter o mesmo padrão em tudo.",
     h1: "Identidade visual e criação de logotipo",
@@ -130,7 +130,7 @@ export const SERVICOS = [
   {
     slug: "design-para-redes-sociais",
     rotulo: "Design para redes sociais",
-    title: "Design para redes sociais em Brasília | Reload Estúdio",
+    title: "Design para redes sociais em Brasília | Reload Estúdios",
     description:
       "Design para redes sociais em Brasília e para todo o Brasil: posts, carrosséis, stories e capas no padrão visual da sua marca.",
     h1: "Design para redes sociais",
@@ -152,7 +152,7 @@ export const SERVICOS = [
   {
     slug: "backup-de-emails-corporativos",
     rotulo: "Backup de e-mails",
-    title: "Backup de e-mails corporativos em Brasília | Reload Estúdio",
+    title: "Backup de e-mails corporativos em Brasília | Reload Estúdios",
     description:
       "Backup e migração de e-mails corporativos em Brasília e para todo o Brasil, sem perder mensagens importantes ao trocar de hospedagem.",
     h1: "Backup e migração de e-mails corporativos",
