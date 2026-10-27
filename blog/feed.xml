@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Blog da Reload Estúdios</title>
+  <link>https://reloadestudios.com.br/blog/</link>
+  <description>Marketing digital, sites, identidade visual e redes sociais.</description>
+  <language>pt-BR</language>
+  <atom:link href="https://reloadestudios.com.br/blog/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Site institucional ou landing page: qual a sua empresa precisa?</title>
+    <link>https://reloadestudios.com.br/blog/site-institucional-ou-landing-page/</link>
+    <guid>https://reloadestudios.com.br/blog/site-institucional-ou-landing-page/</guid>
+    <pubDate>Tue, 27 Oct 2026 15:00:00 GMT</pubDate>
+    <category>Sites</category>
+    <description>Entenda a diferença entre site institucional e landing page, quando usar cada um e como os dois podem trabalhar juntos no marketing da sua empresa.</description>
+  </item>
+  <item>
+    <title>Identidade visual: por que ela vai muito além do logotipo</title>
+    <link>https://reloadestudios.com.br/blog/identidade-visual-alem-do-logotipo/</link>
+    <guid>https://reloadestudios.com.br/blog/identidade-visual-alem-do-logotipo/</guid>
+    <pubDate>Tue, 27 Oct 2026 15:00:00 GMT</pubDate>
+    <category>Identidade visual</category>
+    <description>Logotipo, cores, tipografia e aplicações: entenda o que forma uma identidade visual e por que ela faz sua marca ser reconhecida e lembrada.</description>
+  </item>
+  <item>
+    <title>Perfil da Empresa no Google: como ser encontrado por quem procura você</title>
+    <link>https://reloadestudios.com.br/blog/perfil-da-empresa-no-google/</link>
+    <guid>https://reloadestudios.com.br/blog/perfil-da-empresa-no-google/</guid>
+    <pubDate>Tue, 27 Oct 2026 15:00:00 GMT</pubDate>
+    <category>Marketing digital</category>
+    <description>O Perfil da Empresa no Google (antigo Google Meu Negócio) faz sua empresa aparecer no Maps e na busca. Veja como deixar o seu completo e confiável.</description>
+  </item>
+  <item>
+    <title>Como manter o padrão visual da sua marca nas redes sociais</title>
+    <link>https://reloadestudios.com.br/blog/padrao-visual-nas-redes-sociais/</link>
+    <guid>https://reloadestudios.com.br/blog/padrao-visual-nas-redes-sociais/</guid>
+    <pubDate>Tue, 27 Oct 2026 15:00:00 GMT</pubDate>
+    <category>Redes sociais</category>
+    <description>Dicas práticas para deixar o feed com cara de marca: cores, fontes, modelos de post e o cuidado de seguir a mesma identidade do seu site.</description>
+  </item>
+</channel>
+</rss>

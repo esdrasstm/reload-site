@@ -1,9 +1,11 @@
-// Gera as páginas de serviço (pasta /<slug>/index.html) e o sitemap.xml a partir
-// de scripts/servicos.mjs. Uso: node scripts/build-pages.mjs
-import { mkdirSync, writeFileSync } from "node:fs";
+// Gera as páginas de serviço (/<slug>/), o blog (/blog/ e /blog/<slug>/), o feed RSS
+// e o sitemap.xml a partir de scripts/servicos.mjs e scripts/blog.mjs.
+// Uso: node scripts/build-pages.mjs
+import { mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { POSTS } from "./blog.mjs";
 import { DEPOIMENTOS, FAQ_LOCAL, PROJETOS, SERVICOS } from "./servicos.mjs";
 
 // Onde a Reload está e quem ela atende (vai para os dados estruturados).
@@ -76,46 +78,43 @@ function projetoCard(id) {
       </article>`;
 }
 
-function pagina(s) {
-  const url = `${SITE}/${s.slug}/`;
-  const outros = SERVICOS.filter((o) => o.slug !== s.slug);
-  const dep = s.depoimento && DEPOIMENTOS[s.depoimento];
-  const og = `${SITE}/assets/og.png`;
-
+/** <head>, faixa de aviso e menu de todas as páginas geradas. */
+function cabeca({ title, description, url, schemas, ogType = "website", image = `${SITE}/assets/og.png`, imageAlt, extra = "" }) {
   return `<!doctype html>
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<!-- Gerado por scripts/build-pages.mjs a partir de scripts/servicos.mjs. Edite lá, não aqui. -->
-<title>${esc(s.title)}</title>
-<meta name="description" content="${esc(s.description)}">
+<!-- Gerado por scripts/build-pages.mjs. Edite o conteúdo em scripts/, não aqui. -->
+<title>${esc(title)}</title>
+<meta name="description" content="${esc(description)}">
 <link rel="canonical" href="${url}">
 <meta name="theme-color" content="#0c0c0c">
 <link rel="icon" href="/assets/r-symbol.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/logo.png">
+<link rel="alternate" type="application/rss+xml" title="Blog da Reload Estúdios" href="${SITE}/blog/feed.xml">
 
-<meta property="og:type" content="website">
+<meta property="og:type" content="${ogType}">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Reload Estúdios">
-<meta property="og:title" content="${esc(s.title)}">
-<meta property="og:description" content="${esc(s.description)}">
+<meta property="og:title" content="${esc(title)}">
+<meta property="og:description" content="${esc(description)}">
 <meta property="og:url" content="${url}">
-<meta property="og:image" content="${og}">
+<meta property="og:image" content="${image}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Reload Estúdios: identidade visual, site e redes sociais no mesmo padrão profissional">
+<meta property="og:image:alt" content="${esc(imageAlt || "Reload Estúdios: identidade visual, site e redes sociais no mesmo padrão profissional")}">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="${esc(s.title)}">
-<meta name="twitter:description" content="${esc(s.description)}">
-<meta name="twitter:image" content="${og}">
-
+<meta name="twitter:title" content="${esc(title)}">
+<meta name="twitter:description" content="${esc(description)}">
+<meta name="twitter:image" content="${image}">
+${extra}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap">
 <link rel="stylesheet" href="/css/style.css">
 <script>document.documentElement.classList.add("js");</script>
-${schemas(s).map((o) => `<script type="application/ld+json">\n${json(o)}\n</script>`).join("\n")}
+${schemas.map((o) => `<script type="application/ld+json">\n${json(o)}\n</script>`).join("\n")}
 </head>
 <body>
 <a class="ribbon" href="/#orcamento">Orçamento personalizado em até 24h <span aria-hidden="true">→</span></a>
@@ -124,11 +123,32 @@ ${schemas(s).map((o) => `<script type="application/ld+json">\n${json(o)}\n</scri
   <a class="nav__logo" href="/" aria-label="Reload Estúdios, início"><img src="/assets/r-symbol.svg" alt=""></a>
   <nav class="nav__links" aria-label="Principal">
     <a href="/#projetos">PROJETOS</a>
+    <a href="/blog/">BLOG</a>
     <a href="/#duvidas">DÚVIDAS</a>
   </nav>
   <a class="btn nav__cta" href="/#orcamento">CONTATO</a>
 </header>
+`;
+}
 
+/** Rodapé e scripts de todas as páginas geradas. */
+function fim() {
+  return `${FOOTER}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="/js/main.js"></script>
+</body>
+</html>
+`;
+}
+
+function pagina(s) {
+  const url = `${SITE}/${s.slug}/`;
+  const outros = SERVICOS.filter((o) => o.slug !== s.slug);
+  const dep = s.depoimento && DEPOIMENTOS[s.depoimento];
+
+  return `${cabeca({ title: s.title, description: s.description, url, schemas: schemas(s) })}
 <main>
   <section class="hero hero--page" aria-labelledby="titulo">
     <div class="grid-bg" aria-hidden="true"></div>
@@ -212,14 +232,7 @@ ${outros.map((o) => `          <li><a href="/${o.slug}/">${esc(o.rotulo)} <span 
   </section>
 </main>
 
-${FOOTER}
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="/js/main.js"></script>
-</body>
-</html>
-`;
+${fim()}`;
 }
 
 // Rodapé igual ao da home (com caminhos a partir da raiz do site).
@@ -234,6 +247,7 @@ const FOOTER = `<footer>
         <h3>SERVIÇOS</h3>
         <ul class="footer__links">
 ${SERVICOS.map((o) => `          <li><a href="/${o.slug}/">${esc(o.rotulo)}</a></li>`).join("\n")}
+          <li><a href="/blog/">Blog</a></li>
         </ul>
       </nav>
       <div class="footer__col footer__col--contact">
@@ -266,36 +280,221 @@ ${SERVICOS.map((o) => `          <li><a href="/${o.slug}/">${esc(o.rotulo)}</a><
   </div>
 </footer>`;
 
-for (const s of SERVICOS) {
-  const file = join(ROOT, s.slug, "index.html");
-  mkdirSync(dirname(file), { recursive: true });
-  writeFileSync(file, pagina(s));
-  console.log(`página: /${s.slug}/`);
+/* ---------- Blog ---------- */
+
+const MESES = ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"];
+const dataBR = (iso) => {
+  const [a, m, d] = iso.split("-").map(Number);
+  return `${d} de ${MESES[m - 1]} de ${a}`;
+};
+/** Minutos de leitura (cerca de 200 palavras por minuto). */
+const leitura = (html) => Math.max(1, Math.round(html.replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length / 200));
+
+/** Título da aba e do Google: com a marca quando couber em 60 caracteres. */
+const tituloSeo = (p) => {
+  const t = p.tituloSeo || p.titulo;
+  return `${t} | Reload Estúdios`.length <= 60 ? `${t} | Reload Estúdios` : t;
+};
+
+const PUBLICADOS = POSTS.filter((p) => p.publicado).sort((a, b) => b.data.localeCompare(a.data));
+const urlPost = (p) => `${SITE}/blog/${p.slug}/`;
+const ORGANIZACAO = { "@type": "Organization", name: "Reload Estúdios", url: `${SITE}/`, logo: { "@type": "ImageObject", url: `${SITE}/assets/logo.png`, width: 512, height: 512 } };
+
+function cardPost(p) {
+  return `        <li class="post-card">
+          <a href="/blog/${p.slug}/">
+            <span class="post-card__meta"><span class="feature-chip"><span class="feature-chip__mark" aria-hidden="true"></span>${esc(p.categoria)}</span><span>${leitura(p.corpo)} min de leitura</span></span>
+            <h3>${esc(p.titulo)}</h3>
+            <p>${esc(p.descricao)}</p>
+            <span class="post-card__more">Ler artigo${ARROW}</span>
+          </a>
+        </li>`;
 }
 
+function paginaBlog() {
+  const url = `${SITE}/blog/`;
+  const descricao = "Artigos sobre marketing digital, criação de sites, identidade visual e redes sociais, escritos pela equipe da Reload Estúdios.";
+  const schemas = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      name: "Blog da Reload Estúdios",
+      description: descricao,
+      url,
+      inLanguage: "pt-BR",
+      publisher: ORGANIZACAO,
+      blogPost: PUBLICADOS.map((p) => ({ "@type": "BlogPosting", headline: p.titulo, url: urlPost(p), datePublished: p.data })),
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Início", item: `${SITE}/` },
+        { "@type": "ListItem", position: 2, name: "Blog", item: url },
+      ],
+    },
+  ];
+  return `${cabeca({ title: "Blog de marketing digital e design | Reload Estúdios", description: descricao, url, schemas })}
+<main>
+  <section class="hero hero--page" aria-labelledby="titulo">
+    <div class="grid-bg" aria-hidden="true"></div>
+    <div class="hero__content">
+      <nav class="crumbs" aria-label="Você está em"><a href="/">Início</a><span aria-hidden="true">/</span><span aria-current="page">Blog</span></nav>
+      <h1 class="hero__title" id="titulo">${marcado("Blog da Reload Estúdios", "Blog")}</h1>
+      <p class="hero__sub">Marketing digital, sites, identidade visual e redes sociais, explicados sem complicação.</p>
+    </div>
+  </section>
+
+  <section class="blog-list" aria-label="Artigos">
+    <div class="wrap">
+      <ul class="post-grid">
+${PUBLICADOS.map(cardPost).join("\n")}
+      </ul>
+    </div>
+  </section>
+</main>
+
+${fim()}`;
+}
+
+function paginaPost(p) {
+  const url = urlPost(p);
+  const servico = SERVICOS.find((s) => s.slug === p.servico);
+  const outros = PUBLICADOS.filter((o) => o.slug !== p.slug).slice(0, 2);
+  const atualizado = p.atualizado || p.data;
+  const schemas = [
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: p.titulo,
+      description: p.descricao,
+      url,
+      mainEntityOfPage: url,
+      image: `${SITE}/assets/og.png`,
+      datePublished: p.data,
+      dateModified: atualizado,
+      inLanguage: "pt-BR",
+      articleSection: p.categoria,
+      author: ORGANIZACAO,
+      publisher: ORGANIZACAO,
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Início", item: `${SITE}/` },
+        { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE}/blog/` },
+        { "@type": "ListItem", position: 3, name: p.titulo, item: url },
+      ],
+    },
+  ];
+  const extra = `<meta property="article:published_time" content="${p.data}">
+<meta property="article:modified_time" content="${atualizado}">
+<meta property="article:section" content="${esc(p.categoria)}">`;
+
+  return `${cabeca({ title: tituloSeo(p), description: p.descricao, url, schemas, ogType: "article", extra })}
+<main>
+  <article class="post" aria-labelledby="titulo">
+    <header class="post__head">
+      <div class="grid-bg" aria-hidden="true"></div>
+      <div class="post__head-inner">
+        <nav class="crumbs" aria-label="Você está em"><a href="/">Início</a><span aria-hidden="true">/</span><a href="/blog/">Blog</a><span aria-hidden="true">/</span><span aria-current="page">${esc(p.categoria)}</span></nav>
+        <h1 class="post__title" id="titulo">${esc(p.titulo)}</h1>
+        <p class="post__lead">${esc(p.descricao)}</p>
+        <p class="post__meta"><span class="feature-chip"><span class="feature-chip__mark" aria-hidden="true"></span>${esc(p.categoria)}</span><time datetime="${p.data}">${dataBR(p.data)}</time><span>${leitura(p.corpo)} min de leitura</span></p>
+      </div>
+    </header>
+    <div class="prose">
+${p.corpo.trim()}
+    </div>
+${servico ? `    <aside class="post__cta" aria-label="Serviço relacionado">
+      <p class="post__cta-kicker">Serviço da Reload Estúdios</p>
+      <h2>${esc(servico.h1)}</h2>
+      <p>${esc(servico.subtitulo)}</p>
+      <div class="hero__actions"><a class="btn hero__cta" href="/${servico.slug}/">Conhecer o serviço</a><a class="btn btn--light hero__cta" href="/#orcamento">Pedir orçamento</a></div>
+    </aside>
+` : ""}  </article>
+${outros.length ? `
+  <section class="blog-list blog-list--more" aria-labelledby="mais-titulo">
+    <div class="wrap">
+      <h2 class="section-title" id="mais-titulo">Leia também</h2>
+      <ul class="post-grid">
+${outros.map(cardPost).join("\n")}
+      </ul>
+    </div>
+  </section>
+` : ""}</main>
+
+${fim()}`;
+}
+
+/** Feed RSS do blog (leitores de notícias e ferramentas de newsletter). */
+function feed() {
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Blog da Reload Estúdios</title>
+  <link>${SITE}/blog/</link>
+  <description>Marketing digital, sites, identidade visual e redes sociais.</description>
+  <language>pt-BR</language>
+  <atom:link href="${SITE}/blog/feed.xml" rel="self" type="application/rss+xml"/>
+${PUBLICADOS.map((p) => `  <item>
+    <title>${esc(p.titulo)}</title>
+    <link>${urlPost(p)}</link>
+    <guid>${urlPost(p)}</guid>
+    <pubDate>${new Date(`${p.data}T12:00:00-03:00`).toUTCString()}</pubDate>
+    <category>${esc(p.categoria)}</category>
+    <description>${esc(p.descricao)}</description>
+  </item>`).join("\n")}
+</channel>
+</rss>
+`;
+}
+
+/* ---------- Escrita dos arquivos ---------- */
+
+const escreve = (caminho, conteudo) => {
+  const file = join(ROOT, caminho);
+  mkdirSync(dirname(file), { recursive: true });
+  writeFileSync(file, conteudo);
+  console.log(`gerado: /${caminho.replace(/index\.html$/, "")}`);
+};
+
+for (const s of SERVICOS) escreve(`${s.slug}/index.html`, pagina(s));
+
+// Artigos despublicados saem do site: apaga a pasta que tiver sobrado.
+for (const p of POSTS.filter((p) => !p.publicado)) rmSync(join(ROOT, "blog", p.slug), { recursive: true, force: true });
+escreve("blog/index.html", paginaBlog());
+for (const p of PUBLICADOS) escreve(`blog/${p.slug}/index.html`, paginaPost(p));
+escreve("blog/feed.xml", feed());
+
 const urls = [
-  { loc: `${SITE}/`, priority: "1.0" },
-  ...SERVICOS.map((s) => ({ loc: `${SITE}/${s.slug}/`, priority: "0.9" })),
+  { loc: `${SITE}/`, lastmod: HOJE, priority: "1.0" },
+  ...SERVICOS.map((s) => ({ loc: `${SITE}/${s.slug}/`, lastmod: HOJE, priority: "0.9" })),
+  { loc: `${SITE}/blog/`, lastmod: PUBLICADOS[0]?.data || HOJE, priority: "0.7" },
+  ...PUBLICADOS.map((p) => ({ loc: urlPost(p), lastmod: p.atualizado || p.data, priority: "0.6" })),
 ];
 writeFileSync(
   join(ROOT, "sitemap.xml"),
   `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls.map((u) => `  <url>\n    <loc>${u.loc}</loc>\n    <lastmod>${HOJE}</lastmod>\n    <priority>${u.priority}</priority>\n  </url>`).join("\n")}
+${urls.map((u) => `  <url>\n    <loc>${u.loc}</loc>\n    <lastmod>${u.lastmod}</lastmod>\n    <priority>${u.priority}</priority>\n  </url>`).join("\n")}
 </urlset>
 `,
 );
 console.log(`sitemap.xml: ${urls.length} endereços`);
 
 // O rodapé da home recebe a mesma lista de serviços (entre os marcadores).
-import { readFileSync } from "node:fs";
 const homePath = join(ROOT, "index.html");
 const home = readFileSync(homePath, "utf8");
-const inicio = "<!--SERVICOS-->";
-const fim = "<!--/SERVICOS-->";
-if (home.includes(inicio) && home.includes(fim)) {
-  const lista = SERVICOS.map((o) => `          <li><a href="${o.slug}/">${esc(o.rotulo)}</a></li>`).join("\n");
-  const novo = home.replace(new RegExp(`${inicio}[\\s\\S]*?${fim}`), `${inicio}\n${lista}\n          ${fim}`);
+const MARCA_INICIO = "<!--SERVICOS-->";
+const MARCA_FIM = "<!--/SERVICOS-->";
+if (home.includes(MARCA_INICIO) && home.includes(MARCA_FIM)) {
+  const lista = [
+    ...SERVICOS.map((o) => `          <li><a href="${o.slug}/">${esc(o.rotulo)}</a></li>`),
+    `          <li><a href="blog/">Blog</a></li>`,
+  ].join("\n");
+  const novo = home.replace(new RegExp(`${MARCA_INICIO}[\\s\\S]*?${MARCA_FIM}`), `${MARCA_INICIO}\n${lista}\n          ${MARCA_FIM}`);
   writeFileSync(homePath, novo);
   console.log("home: lista de serviços do rodapé atualizada");
 }
