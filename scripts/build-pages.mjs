@@ -4,7 +4,12 @@ import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { DEPOIMENTOS, PROJETOS, SERVICOS } from "./servicos.mjs";
+import { DEPOIMENTOS, FAQ_LOCAL, PROJETOS, SERVICOS } from "./servicos.mjs";
+
+// Onde a Reload está e quem ela atende (vai para os dados estruturados).
+const ENDERECO = { "@type": "PostalAddress", addressLocality: "Brasília", addressRegion: "DF", addressCountry: "BR" };
+const AREA = [{ "@type": "City", name: "Brasília" }, { "@type": "Country", name: "Brasil" }];
+const faqDe = (s) => [...s.faq, FAQ_LOCAL];
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const SITE = "https://reloadestudios.com.br";
@@ -43,12 +48,13 @@ function schemas(s) {
       serviceType: s.servicoSchema,
       description: s.description,
       url,
-      provider: { "@type": "ProfessionalService", name: "Reload Estúdio", url: `${SITE}/`, telephone: "+55-61-98358-6190" },
+      areaServed: AREA,
+      provider: { "@type": "ProfessionalService", name: "Reload Estúdio", url: `${SITE}/`, telephone: "+55-61-98358-6190", address: ENDERECO },
     },
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
-      mainEntity: s.faq.map(({ q, a }) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })),
+      mainEntity: faqDe(s).map(({ q, a }) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })),
     },
   ];
 }
@@ -128,6 +134,7 @@ ${schemas(s).map((o) => `<script type="application/ld+json">\n${json(o)}\n</scri
       <nav class="crumbs" aria-label="Você está em"><a href="/">Início</a><span aria-hidden="true">/</span><span aria-current="page">${esc(s.rotulo)}</span></nav>
       <h1 class="hero__title" id="titulo">${marcado(s.h1, s.destaque)}</h1>
       <p class="hero__sub">${esc(s.subtitulo)}</p>
+      <p class="hero__local">Em Brasília (DF) e para todo o Brasil</p>
       <div class="hero__actions">
         <a class="btn hero__cta" href="/#orcamento">Faça já seu orçamento</a>
         <a class="btn btn--light hero__cta" href="https://wa.me/5561983586190" target="_blank" rel="noopener">Chamar no WhatsApp</a>
@@ -176,7 +183,7 @@ ${s.projetos.map(projetoCard).join("\n")}
           <a class="btn btn--light" href="/#orcamento">Fale com a gente</a>
         </div>
         <div class="faq__list">
-${s.faq.map(({ q, a }) => `          <details class="faq__item">
+${faqDe(s).map(({ q, a }) => `          <details class="faq__item">
             <summary><h3>${esc(q)}</h3>${PLUS}</summary>
             <div class="faq__answer"><p>${esc(a)}</p></div>
           </details>`).join("\n")}

@@ -50,13 +50,19 @@ export const DEPOIMENTOS = {
   },
 };
 
+/** Entra no fim do FAQ de todas as páginas de serviço (e na home). */
+export const FAQ_LOCAL = {
+  q: "Vocês atendem fora de Brasília?",
+  a: "Sim. A Reload fica em Brasília (DF) e atende empresas de todo o Brasil.",
+};
+
 export const SERVICOS = [
   {
     slug: "criacao-de-sites",
     rotulo: "Criação de sites",
-    title: "Criação de sites profissionais | Reload Estúdio",
+    title: "Criação de sites profissionais em Brasília | Reload Estúdio",
     description:
-      "Criação de sites institucionais com o visual da sua marca, rápidos, pensados para o celular e para aparecer no Google. Orçamento em até 24h.",
+      "Criação de sites institucionais em Brasília e para todo o Brasil: com o visual da sua marca, rápidos e feitos para aparecer no Google.",
     h1: "Criação de sites profissionais",
     destaque: "profissionais",
     subtitulo:
@@ -79,9 +85,9 @@ export const SERVICOS = [
   {
     slug: "landing-page",
     rotulo: "Landing pages",
-    title: "Criação de landing page para anúncios | Reload Estúdio",
+    title: "Criação de landing page em Brasília | Reload Estúdio",
     description:
-      "Landing pages com um objetivo claro, rápidas e no padrão visual da sua marca, prontas para receber o tráfego dos seus anúncios. Orçamento em até 24h.",
+      "Landing pages em Brasília e para todo o Brasil: um objetivo claro, carregamento rápido e o visual da sua marca, prontas para seus anúncios.",
     h1: "Criação de landing pages",
     destaque: "landing pages",
     subtitulo:
@@ -101,9 +107,9 @@ export const SERVICOS = [
   {
     slug: "identidade-visual",
     rotulo: "Identidade visual",
-    title: "Identidade visual e criação de logotipo | Reload Estúdio",
+    title: "Identidade visual e logotipo em Brasília | Reload Estúdio",
     description:
-      "Criação de identidade visual completa: logotipo, cores, tipografia e aplicações, para sua marca ter o mesmo padrão no site, nas redes e no impresso.",
+      "Identidade visual e logotipo em Brasília e para todo o Brasil: cores, tipografia e aplicações para sua marca ter o mesmo padrão em tudo.",
     h1: "Identidade visual e criação de logotipo",
     destaque: "logotipo",
     subtitulo:
@@ -124,9 +130,9 @@ export const SERVICOS = [
   {
     slug: "design-para-redes-sociais",
     rotulo: "Design para redes sociais",
-    title: "Design para redes sociais e Instagram | Reload Estúdio",
+    title: "Design para redes sociais em Brasília | Reload Estúdio",
     description:
-      "Design para Instagram e outras redes: posts, carrosséis, stories e capas de destaque no padrão visual da sua marca. Orçamento em até 24h.",
+      "Design para redes sociais em Brasília e para todo o Brasil: posts, carrosséis, stories e capas no padrão visual da sua marca.",
     h1: "Design para redes sociais",
     destaque: "redes sociais",
     subtitulo:
@@ -146,9 +152,9 @@ export const SERVICOS = [
   {
     slug: "backup-de-emails-corporativos",
     rotulo: "Backup de e-mails",
-    title: "Backup e migração de e-mails corporativos | Reload Estúdio",
+    title: "Backup de e-mails corporativos em Brasília | Reload Estúdio",
     description:
-      "Backup de e-mails corporativos e migração ao trocar de hospedagem, sem perder mensagens importantes da sua empresa. Orçamento em até 24h.",
+      "Backup e migração de e-mails corporativos em Brasília e para todo o Brasil, sem perder mensagens importantes ao trocar de hospedagem.",
     h1: "Backup e migração de e-mails corporativos",
     destaque: "e-mails corporativos",
     subtitulo:
