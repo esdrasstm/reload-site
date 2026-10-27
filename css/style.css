@@ -250,19 +250,6 @@ a { color: inherit; text-decoration: none; }
 .hero-card[data-pos="center"] { transform: translate3d(-50%, -3.5rem, 0) rotate(0deg) scale(1); z-index: 4; cursor: default; }
 .hero-card[data-pos="right"] { transform: translate3d(calc(-50% + 18vw), -2rem, 0) rotate(3deg) scale(0.92); z-index: 2; cursor: pointer; }
 .hero-card img { display: block; width: 100%; height: 100%; object-fit: cover; }
-.hero-card__ph {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  gap: 6px;
-  height: 100%;
-  padding: 28px;
-  background-color: #1b1b1b;
-  background-image: radial-gradient(#333 1px, transparent 1px);
-  background-size: 16px 16px;
-}
-.hero-card__ph b { font-size: 22px; font-weight: 600; letter-spacing: -0.02em; color: var(--off); }
-.hero-card__ph small { font-size: 13px; color: var(--muted); }
 .hero-card__label {
   position: absolute;
   left: 14px;
@@ -395,7 +382,6 @@ a { color: inherit; text-decoration: none; }
   background-size: 16px 16px;
 }
 .feature-visual img, .feature-visual video { position: relative; z-index: 1; display: block; width: 100%; height: 100%; object-fit: cover; }
-.feature-visual__ph { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(244, 244, 244, 0.35); }
 
 @media (min-width: 768px) {
   .features__wrapper { gap: 32px; padding-left: max(2rem, env(safe-area-inset-left, 0px)); padding-right: max(2rem, env(safe-area-inset-right, 0px)); }
