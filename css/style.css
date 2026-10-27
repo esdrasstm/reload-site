@@ -496,8 +496,7 @@ a { color: inherit; text-decoration: none; }
 /* todos os depoimentos ocupam a mesma célula: a altura é a do maior e a troca é só um fade */
 .testimonial__slide { grid-area: 1 / 1; display: flex; flex-direction: column; align-items: center; gap: 2.5rem; margin: 0; opacity: 0; visibility: hidden; transition: opacity 0.5s ease, visibility 0.5s; }
 .testimonial__slide.is-active { opacity: 1; visibility: visible; }
-.testimonial__author { display: flex; align-items: center; gap: 1rem; text-align: left; }
-.testimonial__avatar { width: 44px; height: 44px; flex: none; border-radius: 10px; background: var(--field); display: grid; place-items: center; font-weight: 700; color: var(--marca); }
+.testimonial__author { text-align: center; }
 .testimonial__author b { display: block; font-size: 16px; font-weight: 600; }
 .testimonial__author small { display: block; font-size: 14px; color: var(--muted); }
 .testimonial__stars { display: block; margin-bottom: -1.5rem; }
