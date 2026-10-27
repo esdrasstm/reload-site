@@ -9,7 +9,7 @@
   initButtonLight();
   initHeroCards();
   initReveal();
-  initProcess();
+  initTestimonials();
 
   // Sem GSAP (CDN bloqueado) ou com movimento reduzido: mostra tudo parado.
   if (!hasGsap || reduced) return;
@@ -65,22 +65,26 @@
     items.forEach((el) => io.observe(el));
   }
 
-  /* ---------- Como trabalhamos: cada etapa troca o painel da direita ---------- */
-  function initProcess() {
-    const tabs = [...document.querySelectorAll(".process__step")];
-    tabs.forEach((tab) => {
-      tab.addEventListener("click", () => {
-        tabs.forEach((t) => {
-          const on = t === tab;
-          t.setAttribute("aria-selected", String(on));
-          const pane = document.getElementById(t.getAttribute("aria-controls"));
-          pane.hidden = !on;
-          pane.classList.remove("is-active");
-          // espera um quadro para o fade de entrada funcionar depois de sair do hidden
-          if (on) requestAnimationFrame(() => pane.classList.add("is-active"));
-        });
+  /* ---------- Depoimentos: setas trocam o depoimento (só aparecem com 2 ou mais) ---------- */
+  function initTestimonials() {
+    const slides = [...document.querySelectorAll(".testimonial__slide")];
+    const nav = document.getElementById("depoimentos-nav");
+    if (slides.length < 2) return;
+    const count = nav.querySelector(".testimonial__count");
+    let current = 0;
+    const show = (i) => {
+      current = (i + slides.length) % slides.length;
+      slides.forEach((s, k) => {
+        s.classList.toggle("is-active", k === current);
+        s.setAttribute("aria-hidden", String(k !== current));
       });
+      count.textContent = `${current + 1} / ${slides.length}`;
+    };
+    nav.hidden = false;
+    nav.querySelectorAll(".testimonial__arrow").forEach((btn) => {
+      btn.addEventListener("click", () => show(current + Number(btn.dataset.dir)));
     });
+    show(0);
   }
 
   /* ---------- Botões laranja: a luz do hover segue o cursor ---------- */
