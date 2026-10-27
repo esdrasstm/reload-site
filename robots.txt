@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://reloadestudios.com.br/sitemap.xml
