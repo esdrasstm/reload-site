@@ -119,6 +119,7 @@
   function initForm() {
     const form = document.getElementById("form-orcamento");
     const status = document.getElementById("form-status");
+    if (!form) return; // páginas de serviço não têm formulário
     form.addEventListener("submit", (e) => {
       e.preventDefault();
       const invalid = [...form.elements].find((el) => el.willValidate && !el.checkValidity());
