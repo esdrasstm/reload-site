@@ -500,6 +500,8 @@ a { color: inherit; text-decoration: none; }
 .testimonial__avatar { width: 44px; height: 44px; flex: none; border-radius: 10px; background: var(--field); display: grid; place-items: center; font-weight: 700; color: var(--marca); }
 .testimonial__author b { display: block; font-size: 16px; font-weight: 600; }
 .testimonial__author small { display: block; font-size: 14px; color: var(--muted); }
+.testimonial__stars { display: block; margin-bottom: -1.5rem; }
+.testimonial__stars svg { display: block; width: 120px; height: 22px; fill: #fbbc04; }
 .testimonial__nav { display: flex; align-items: center; gap: 16px; }
 .testimonial__arrow { width: 40px; height: 40px; display: grid; place-items: center; padding: 0; border: 1px solid #333; border-radius: 10px; background: transparent; color: var(--off); cursor: pointer; transition: border-color 0.3s, background 0.3s; }
 .testimonial__arrow:hover { border-color: var(--marca); background: rgba(255, 46, 0, 0.12); }
