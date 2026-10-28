@@ -176,6 +176,14 @@
           body: JSON.stringify(corpo),
         });
         const json = await resposta.json().catch(() => ({}));
+        // Antes da ativação o FormSubmit responde "needs Activation" e não entrega o pedido.
+        if (/activat/i.test(json.message || "")) {
+          mostra(
+            "erro",
+            `O formulário está sendo ativado e o seu pedido não foi entregue. Enquanto isso, fale com a gente pelo <a href="${WHATSAPP}" target="_blank" rel="noopener">WhatsApp</a>.`,
+          );
+          return;
+        }
         if (!resposta.ok || String(json.success) !== "true") throw new Error(json.message || `HTTP ${resposta.status}`);
         form.reset();
         mostra("ok", "Pedido enviado! Enviamos uma confirmação para o seu e-mail e respondemos em até 24h.");
