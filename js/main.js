@@ -116,22 +116,79 @@
   }
 
   /* ---------- Formulário ---------- */
+  /* ---------- Formulário de orçamento: envia por e-mail (FormSubmit) ----------
+     O pedido chega em ENVIO_PARA; o cliente recebe uma confirmação automática no
+     e-mail que digitou. No primeiro envio o FormSubmit manda um e-mail de ativação
+     para ENVIO_PARA: é só clicar no link uma vez. */
   function initForm() {
     const form = document.getElementById("form-orcamento");
     const status = document.getElementById("form-status");
     if (!form) return; // páginas de serviço não têm formulário
-    form.addEventListener("submit", (e) => {
+
+    const ENVIO_PARA = "esdras.dsgn@gmail.com";
+    const ENDPOINT = `https://formsubmit.co/ajax/${ENVIO_PARA}`;
+    const WHATSAPP = "https://wa.me/5561983586190";
+    const button = form.querySelector(".form__submit");
+    const buttonHtml = button.innerHTML;
+
+    const mostra = (tipo, html) => {
+      status.hidden = false;
+      status.dataset.tipo = tipo; // "erro" | "ok" | "enviando"
+      status.innerHTML = html;
+    };
+
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
       const invalid = [...form.elements].find((el) => el.willValidate && !el.checkValidity());
-      status.hidden = false;
       if (invalid) {
         const label = form.querySelector(`label[for="${invalid.id}"]`)?.textContent.replace(" *", "");
-        status.textContent = `Preencha o campo "${label}" para enviar.`;
+        const motivo = invalid.type === "email" && invalid.value ? `Confira o e-mail digitado.` : `Preencha o campo "${label}" para enviar.`;
+        mostra("erro", motivo);
         invalid.focus();
         return;
       }
-      // TODO: conectar a um serviço de envio (Formspree, e-mail, WhatsApp...).
-      status.textContent = "O envio ainda não está configurado neste protótipo.";
+
+      const dados = Object.fromEntries(new FormData(form));
+      if (dados._honey) return; // campo-armadilha preenchido: robô
+
+      const corpo = {
+        Nome: dados.nome,
+        email: dados.email, // o FormSubmit usa este campo para o "responder" e para a confirmação
+        Telefone: dados.telefone || "Não informado",
+        Empresa: dados.empresa || "Não informada",
+        "Serviço de interesse": dados.servico,
+        Mensagem: dados.mensagem,
+        _subject: `Novo pedido de orçamento pelo site: ${dados.nome}`,
+        _template: "table",
+        _captcha: "false",
+        _autoresponse:
+          "Olá! Recebemos o seu pedido de orçamento na Reload Estúdios. Vamos responder em até 24h, de segunda a sexta, das 9h às 18h. Se preferir, fale com a gente no WhatsApp: (61) 98358-6190.",
+      };
+
+      button.disabled = true;
+      button.textContent = "ENVIANDO...";
+      mostra("enviando", "Enviando o seu pedido...");
+
+      try {
+        const resposta = await fetch(ENDPOINT, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify(corpo),
+        });
+        const json = await resposta.json().catch(() => ({}));
+        if (!resposta.ok || String(json.success) !== "true") throw new Error(json.message || `HTTP ${resposta.status}`);
+        form.reset();
+        mostra("ok", "Pedido enviado! Enviamos uma confirmação para o seu e-mail e respondemos em até 24h.");
+      } catch (erro) {
+        console.error("Falha no envio do formulário:", erro);
+        mostra(
+          "erro",
+          `Não foi possível enviar agora. Tente de novo em instantes ou fale com a gente pelo <a href="${WHATSAPP}" target="_blank" rel="noopener">WhatsApp</a>.`,
+        );
+      } finally {
+        button.disabled = false;
+        button.innerHTML = buttonHtml;
+      }
     });
   }
 })();

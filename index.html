@@ -422,6 +422,8 @@
           </div>
           <div class="field field--full"><label for="f-msg">Mensagem *</label><textarea id="f-msg" name="mensagem" placeholder="Conte-nos sobre seu projeto..." required></textarea></div>
           <button class="btn form__submit" type="submit"><img src="assets/send.svg" alt="">ENVIAR SOLICITAÇÃO</button>
+          <!-- campo-armadilha: pessoas não veem, robôs preenchem -->
+          <div class="form__trap" aria-hidden="true"><label for="f-honey">Não preencha</label><input id="f-honey" name="_honey" type="text" tabindex="-1" autocomplete="off"></div>
           <p class="form__note">* Campos obrigatórios</p>
           <p class="form__status" id="form-status" role="status" hidden></p>
         </form>
