@@ -11,6 +11,91 @@
 
 export const POSTS = [
   {
+    slug: "email-corporativo-dominio-proprio",
+    tituloSeo: "Como criar e-mail corporativo com domínio próprio",
+    titulo: "E-mail corporativo com domínio próprio: como criar o da sua empresa",
+    descricao:
+      "Veja como criar um e-mail corporativo com domínio próprio, quanto custa o .com.br e o que configurar para não cair no spam. Passo a passo e checklist.",
+    categoria: "Sites",
+    data: "2026-10-28",
+    publicado: true,
+    servico: "backup-de-emails-corporativos",
+    capa: { file: "capa-email-corporativo-dominio-proprio-1200x630.jpg", alt: "Mãos digitando em notebook sobre mesa escura à noite, ilustrando a criação de e-mail corporativo com domínio próprio", width: 1200, height: 630 },
+    corpo: `
+<p>Para criar um e-mail corporativo com domínio próprio, você precisa de duas coisas: um domínio no nome da empresa (como suaempresa.com.br) e um serviço que hospede as caixas de e-mail. Com os dois prontos, é só criar as contas, como contato@suaempresa.com.br, e configurar o domínio para as mensagens chegarem sem cair no spam.</p>
+<p>Parece técnico, mas o caminho é curto. Veja o que é, quanto custa o domínio, o passo a passo e os cuidados que fazem diferença no dia a dia da sua empresa.</p>
+
+<h2>O que é e-mail corporativo com domínio próprio</h2>
+<p>É o endereço de e-mail que leva o nome da sua empresa depois do @, em vez do nome de um provedor gratuito. No lugar de suaempresa2026@gmail.com, o cliente recebe uma mensagem de voce@suaempresa.com.br.</p>
+<p>O domínio é o mesmo endereço do site. Por isso, quem já tem site normalmente já tem a parte principal: falta só ativar o e-mail nesse domínio. Se a sua empresa ainda não tem site, o domínio que você registrar agora vai servir para os dois.</p>
+
+<h2>Por que ter um e-mail profissional com o nome da empresa</h2>
+<ul>
+  <li><strong>Credibilidade:</strong> um orçamento enviado de um endereço com o nome da empresa passa mais confiança do que um e-mail gratuito, que qualquer pessoa consegue criar em minutos.</li>
+  <li><strong>Marca em cada mensagem:</strong> todo e-mail enviado repete o nome da empresa e o endereço do site.</li>
+  <li><strong>As contas são da empresa:</strong> as caixas pertencem ao negócio, não ao funcionário. Se alguém sai da equipe, o histórico com os clientes continua com você.</li>
+  <li><strong>Endereços por função:</strong> contato@, financeiro@ e orcamento@ organizam o atendimento, mesmo quando uma pessoa só cuida de tudo.</li>
+</ul>
+
+<h2>Quanto custa o domínio .com.br</h2>
+<p>Registrar um domínio .br custa R$ 40 por ano, segundo o NIC.br, a entidade que opera os endereços terminados em .br pelo Registro.br. Em outubro de 2026, o .br chegou a 6 milhões de nomes registrados, de acordo com a mesma entidade.</p>
+<p>Além do domínio, existe o custo do serviço de e-mail, que muda conforme o provedor, o número de contas e o espaço de cada caixa. Muitos planos de hospedagem de site já incluem algumas contas de e-mail, então confira o que você já paga antes de contratar outro serviço.</p>
+<p>Uma dica que evita dor de cabeça: registre o domínio no CNPJ da empresa e anote a data de renovação. Domínio vencido tira do ar o site e o e-mail ao mesmo tempo.</p>
+
+<h2>Como criar e-mail corporativo: passo a passo</h2>
+<ol>
+  <li><strong>Escolha e registre o domínio.</strong> Prefira um nome curto, fácil de falar ao telefone e igual ao nome da empresa no Instagram e no Google. Confira se ele está disponível no Registro.br.</li>
+  <li><strong>Escolha onde o e-mail vai ficar.</strong> Pode ser a mesma hospedagem do site ou um serviço só de e-mail. Compare espaço por caixa, aplicativo para celular, filtro de spam e suporte.</li>
+  <li><strong>Aponte o domínio para o serviço de e-mail.</strong> Isso é feito nas configurações de DNS do domínio, com os registros que o provedor indicar. O principal se chama MX e diz para onde as mensagens devem ir.</li>
+  <li><strong>Crie as contas.</strong> Use o mesmo padrão para todo mundo, como nome@ ou nome.sobrenome@, e crie os endereços por função que fizerem sentido.</li>
+  <li><strong>Configure no computador e no celular.</strong> Instale as contas nos aplicativos que a equipe já usa e teste o envio e o recebimento, inclusive para endereços de fora.</li>
+  <li><strong>Padronize a assinatura.</strong> Nome, cargo, telefone e site, com as cores e a fonte da marca, iguais para toda a equipe.</li>
+</ol>
+
+<figure class="post-figure"><img src="/blog/email-corporativo-dominio-proprio/corpo-email-corporativo-dominio-proprio-1520x855.jpg" alt="Quadro com dados sobre e-mail corporativo com domínio próprio: domínio .br a R$ 40 por ano, 6 milhões de domínios .br e regras do Gmail contra spam" width="1520" height="855" loading="lazy"></figure>
+
+<h2>Configure SPF, DKIM e DMARC para não cair no spam</h2>
+<p>Um e-mail com domínio próprio só passa credibilidade se chegar na caixa de entrada. Desde fevereiro de 2024, o Google exige que todos que enviam mensagens para contas do Gmail configurem SPF ou DKIM no domínio. Quem envia mais de 5 mil mensagens por dia para o Gmail também precisa configurar o DMARC.</p>
+<ul>
+  <li><strong>SPF:</strong> diz quais servidores podem enviar e-mails em nome do seu domínio.</li>
+  <li><strong>DKIM:</strong> coloca uma assinatura digital em cada mensagem, para provar que ela saiu mesmo da sua empresa e não foi alterada no caminho.</li>
+  <li><strong>DMARC:</strong> orienta os provedores sobre o que fazer com mensagens que falham nessas verificações.</li>
+</ul>
+<p>Os três são registros simples no DNS do domínio, e o provedor de e-mail informa os valores. O Google também pede que a taxa de spam fique abaixo de 0,3%. Na prática: não mande mensagens em massa para listas compradas ou para quem não pediu.</p>
+
+<h2>Checklist do e-mail corporativo</h2>
+<ul>
+  <li>Domínio registrado no CNPJ da empresa, com a data de renovação anotada.</li>
+  <li>Registro MX apontando para o serviço de e-mail.</li>
+  <li>SPF e DKIM configurados, e DMARC se a empresa enviar muitas mensagens.</li>
+  <li>Contas no mesmo padrão de nome e endereços por função.</li>
+  <li>Assinatura padronizada com a identidade visual da marca.</li>
+  <li>Cópia de segurança das caixas de e-mail.</li>
+</ul>
+
+<h2>Vai trocar de hospedagem? Faça o backup dos e-mails antes</h2>
+<p>Contratos, propostas e conversas com clientes costumam estar só no e-mail. Na troca de hospedagem ou de provedor, as caixas precisam ir junto, senão esse histórico se perde. Antes de qualquer mudança, faça uma cópia de segurança e só desative o serviço antigo depois de conferir que tudo chegou ao novo.</p>
+<p>Foi o que fizemos para a AGI Engenharia, junto com o site institucional. Nas palavras do cliente: “Fizeram o backup dos nossos e-mails de forma excepcional para a migração da nossa hospedagem.” Veja como funciona o serviço de <a href="/backup-de-emails-corporativos/">backup e migração de e-mails corporativos</a>.</p>
+<p>E se o domínio vai estrear junto com um site novo, vale ler também <a href="/blog/site-institucional-ou-landing-page/">site institucional ou landing page: qual a sua empresa precisa</a>.</p>
+
+<h2>Perguntas frequentes</h2>
+
+<h2>Dá para ter e-mail corporativo sem ter site?</h2>
+<p>Dá. O e-mail depende só do domínio e de um serviço de e-mail. Mas, como o domínio é o mesmo, vale aproveitar e colocar pelo menos uma página no ar: quem recebe a sua mensagem costuma visitar o endereço que aparece depois do @.</p>
+
+<h2>Quanto custa um domínio .com.br?</h2>
+<p>O registro de um domínio .br custa R$ 40 por ano, segundo o NIC.br. O serviço de e-mail é cobrado à parte e o preço varia conforme o provedor e o número de contas.</p>
+
+<h2>Por que meus e-mails estão caindo no spam?</h2>
+<p>Um motivo comum é o domínio sem autenticação. Desde 2024, o Google exige SPF ou DKIM de quem envia para o Gmail, e DMARC de quem envia mais de 5 mil mensagens por dia. Confira esses registros no DNS do domínio com o seu provedor de e-mail.</p>
+
+<h2>Perco meus e-mails se trocar de hospedagem?</h2>
+<p>Só se as caixas não forem levadas junto. Faça o backup antes da mudança e migre as mensagens para o novo serviço antes de cancelar o antigo.</p>
+
+<p>Quer o e-mail, o site e a marca da sua empresa no mesmo padrão? <a href="/#orcamento">Peça um orçamento personalizado</a> e receba a resposta em até 24h. Identidade visual, site e redes sociais no mesmo padrão profissional.</p>
+`,
+  },
+  {
     slug: "site-institucional-ou-landing-page",
     tituloSeo: "Site institucional ou landing page: qual escolher?",
     titulo: "Site institucional ou landing page: qual a sua empresa precisa?",
