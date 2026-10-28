@@ -39,6 +39,30 @@ export const PROJETOS = {
     w: 1920,
     h: 1283,
   },
+  agendio: {
+    nome: "Agendio",
+    chip: "Site",
+    texto:
+      "O Agendio é uma agenda online para lash designers, designers de sobrancelha e clínicas de estética. Criamos o site com um visual leve e direto, que mostra como as clientes marcam sozinhas pelo link da bio, 24 horas por dia.",
+    link: "https://suagendio.com.br/",
+    botao: "Ver o site",
+    img: "/assets/projetos/agendio-site.jpg",
+    alt: "Site do Agendio com a agenda do dia de uma profissional de estética",
+    w: 2000,
+    h: 1333,
+  },
+  volum: {
+    nome: "Volum",
+    chip: "Landing page",
+    texto:
+      "O Volum é um mixer de volume leve para Windows, que controla o som de cada aplicativo e do microfone direto da barra de tarefas. Criamos a landing page com o visual de vidro do app e uma demonstração que dá para testar na própria página.",
+    link: "https://esdrasstm.github.io/Volum/",
+    botao: "Ver o site",
+    img: "/assets/projetos/volum-site.jpg",
+    alt: "Landing page do Volum com o mixer de volume do Windows aberto",
+    w: 2000,
+    h: 1333,
+  },
 };
 
 export const DEPOIMENTOS = {
@@ -74,7 +98,7 @@ export const SERVICOS = [
       { titulo: "Perfeito no celular", texto: "O layout se adapta ao celular, ao tablet e ao computador, e é testado em cada tamanho de tela." },
       { titulo: "Contato a um toque", texto: "Botões de WhatsApp e formulário de orçamento nos pontos certos da página." },
     ],
-    projetos: ["agi", "iteracao"],
+    projetos: ["agi", "iteracao", "agendio"],
     depoimento: "agi",
     faq: [
       { q: "Quanto custa um site institucional?", a: "Depende da quantidade de páginas e das funcionalidades. Preencha o formulário e enviamos um orçamento personalizado em até 24h, sem compromisso." },
@@ -98,7 +122,7 @@ export const SERVICOS = [
       { titulo: "Carrega rápido", texto: "Página leve, que abre rápido no celular, onde está a maior parte de quem clica em anúncios." },
       { titulo: "Pronta para campanhas", texto: "Feita para receber o tráfego dos seus anúncios e do link da bio, com o visual da sua marca." },
     ],
-    projetos: ["iteracao"],
+    projetos: ["volum", "iteracao"],
     faq: [
       { q: "Qual a diferença entre landing page e site?", a: "O site apresenta a empresa inteira, com várias páginas. A landing page é uma página só, focada em uma oferta ou campanha e em uma única ação." },
       { q: "Quanto custa uma landing page?", a: "Depende do conteúdo e das integrações. Preencha o formulário e enviamos um orçamento personalizado em até 24h, sem compromisso." },
