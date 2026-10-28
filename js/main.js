@@ -4,7 +4,17 @@
 
   const nav = document.getElementById("nav");
 
+  /** Evento na Himetrica. O script carrega com defer e pode faltar (bloqueador): nunca quebra a página. */
+  const rastreia = (nome, dados = {}) => {
+    try {
+      window.himetrica?.track(nome, { pagina: location.pathname, ...dados });
+    } catch (erro) {
+      console.warn("Himetrica indisponível:", erro);
+    }
+  };
+
   initNavScroll();
+  initTracking();
   initForm();
   initButtonLight();
   initHeroCards();
@@ -116,6 +126,21 @@
   }
 
   /* ---------- Formulário ---------- */
+  /* ---------- Análise: cliques no WhatsApp e nos botões de orçamento ---------- */
+  function initTracking() {
+    document.addEventListener("click", (e) => {
+      const link = e.target.closest("a[href]");
+      if (!link) return;
+      const href = link.getAttribute("href");
+      if (href.includes("wa.me/")) {
+        const origem = link.classList.contains("whatsapp-float") ? "botao_flutuante" : link.closest("footer") ? "rodape" : "pagina";
+        rastreia("whatsapp_clique", { origem });
+      } else if (/#orcamento$/.test(href)) {
+        rastreia("orcamento_clique", { botao: link.textContent.trim().slice(0, 40) });
+      }
+    });
+  }
+
   /* ---------- Formulário de orçamento: envia por e-mail (FormSubmit) ----------
      O pedido chega em ENVIO_PARA; o cliente recebe uma confirmação automática no
      e-mail que digitou. No primeiro envio o FormSubmit manda um e-mail de ativação
@@ -187,6 +212,8 @@
         if (!resposta.ok || String(json.success) !== "true") throw new Error(json.message || `HTTP ${resposta.status}`);
         form.reset();
         mostra("ok", "Pedido enviado! Enviamos uma confirmação para o seu e-mail e respondemos em até 24h.");
+        // só o serviço escolhido: nome, e-mail e mensagem do cliente não vão para a análise
+        rastreia("orcamento_enviado", { servico: dados.servico });
       } catch (erro) {
         console.error("Falha no envio do formulário:", erro);
         mostra(
