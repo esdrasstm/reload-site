@@ -11,6 +11,101 @@
 
 export const POSTS = [
   {
+    slug: "black-friday-pequenas-empresas",
+    tituloSeo: "Black Friday para pequenas empresas 2026",
+    titulo: "Black Friday para pequenas empresas: como se preparar em 2026",
+    descricao:
+      "Black Friday para pequenas empresas: como preparar ofertas, landing page, WhatsApp e as regras do CDC para vender bem em 27/11. Veja o checklist.",
+    categoria: "Marketing digital",
+    data: "2026-10-30",
+    publicado: true,
+    servico: "landing-page",
+    capa: { file: "capa-black-friday-pequenas-empresas-1200x630.jpg", alt: "Notebook sobre mesa escura com sacolas de compra e etiquetas de preço, ilustrando a Black Friday para pequenas empresas", width: 1200, height: 630 },
+    corpo: `
+<p>Para a Black Friday dar certo numa pequena empresa, o caminho é preparar com antecedência poucas ofertas reais, um lugar claro para o cliente comprar (uma landing page ou o WhatsApp) e a divulgação nas redes sociais. Em 2026, a data cai na sexta-feira, 27 de novembro, então ainda dá tempo de organizar tudo com calma.</p>
+<p>Veja o que os números do ano passado mostram, o passo a passo para se preparar e as regras que evitam problemas com o cliente e com o Procon.</p>
+
+<h2>Quando é a Black Friday 2026</h2>
+<p>A Black Friday 2026 será na sexta-feira, 27 de novembro. Muitas lojas estendem as ofertas para o fim de semana, e algumas fazem um “esquenta” ao longo de novembro.</p>
+<p>Para a sua empresa, o importante é decidir antes: as ofertas valem só no dia, no fim de semana ou na semana toda? Datas claras ajudam o cliente a se programar e evitam reclamação depois.</p>
+
+<h2>O que a Black Friday 2025 mostra para quem é pequeno</h2>
+<p>Segundo a Confi Neotrust, empresa que acompanha o comércio eletrônico no Brasil, o e-commerce faturou R$ 4,76 bilhões no dia da Black Friday de 2025, alta de 11,2% em relação a 2024. O número de pedidos subiu 28%, para 8,69 milhões, enquanto o tíquete médio caiu 12,8%, para R$ 553,60.</p>
+<p>Em outras palavras: mais gente comprou, mas cada pessoa gastou menos por pedido. Isso é uma boa notícia para a pequena empresa. A data não é só de quem vende televisão e celular: produtos de valor menor, kits e serviços com preço acessível também têm espaço.</p>
+<p>E o WhatsApp pesa muito nessa conta. De acordo com a Pesquisa Serviço 2025, do Sebrae, ele é usado por mais de 80% dos pequenos negócios de serviço. Para muitas empresas, é ali que a venda da Black Friday vai ser fechada.</p>
+
+<h2>Como se preparar para a Black Friday: passo a passo</h2>
+<ol>
+  <li><strong>Escolha poucas ofertas.</strong> O Sebrae recomenda focar em três ou quatro ofertas, com estoque garantido e boa negociação com os fornecedores. Poucas ofertas fortes são mais fáceis de divulgar do que uma vitrine inteira com desconto pequeno.</li>
+  <li><strong>Faça as contas antes de definir o desconto.</strong> Some custo do produto, taxa da maquininha ou da plataforma, frete e embalagem. Desconto que dá prejuízo não é promoção, é perda.</li>
+  <li><strong>Defina onde o cliente vai comprar.</strong> Loja virtual, página da campanha, WhatsApp ou loja física. Seja qual for, o caminho até o pedido precisa ser curto.</li>
+  <li><strong>Pense no frete.</strong> O Sebrae sugere oferecer frete fixo ou grátis para a sua região, porque o custo de envio pode fazer o cliente desistir.</li>
+  <li><strong>Prepare as peças de divulgação.</strong> Posts, stories, banner do site e a imagem que vai no WhatsApp, todos com a cara da sua marca.</li>
+  <li><strong>Organize o atendimento.</strong> Deixe respostas prontas para as perguntas mais comuns (preço, prazo, pagamento, troca) e defina o horário de atendimento.</li>
+  <li><strong>Comece a divulgar cedo.</strong> Avise seus clientes e seguidores alguns dias antes, para quem estiver interessado se programar.</li>
+</ol>
+
+<h2>Landing page para a Black Friday: por que vale a pena</h2>
+<p>Quem clica no anúncio ou no link da bio quer ver a oferta, não procurar por ela. Uma landing page de Black Friday reúne tudo num lugar só: as ofertas, os preços, as condições, o prazo da promoção e um botão para comprar ou chamar no WhatsApp.</p>
+<ul>
+  <li><strong>Um objetivo só:</strong> sem menus e distrações, o visitante vai direto para a ação.</li>
+  <li><strong>Um link para tudo:</strong> o mesmo endereço serve para o Instagram, o WhatsApp, o e-mail e os anúncios.</li>
+  <li><strong>Reaproveitável:</strong> depois da Black Friday, a mesma estrutura pode virar a página do Natal ou da próxima campanha.</li>
+  <li><strong>Leve no celular:</strong> a página precisa abrir rápido e ser fácil de ler na tela pequena, onde o cliente toca no link do Instagram ou do WhatsApp.</li>
+</ul>
+<p>Se você ainda tem dúvida entre criar uma página nova ou usar o site que já tem, leia <a href="/blog/site-institucional-ou-landing-page/">site institucional ou landing page: qual a sua empresa precisa</a>. E veja como funciona a criação de <a href="/landing-page/">landing page</a> na Reload.</p>
+
+<figure class="post-figure"><img src="/blog/black-friday-pequenas-empresas/corpo-black-friday-pequenas-empresas-1520x855.jpg" alt="Quadro com dados da Black Friday para pequenas empresas: 27 de novembro de 2026, R$ 4,76 bilhões no e-commerce em 2025, 28% mais pedidos e 7 dias para o cliente desistir" width="1520" height="855" loading="lazy"></figure>
+
+<h2>Black Friday no Instagram e no WhatsApp</h2>
+<p>A orientação do Sebrae é manter um conteúdo atrativo no Instagram, com link que leve para o WhatsApp, onde a venda é fechada. Algumas dicas práticas:</p>
+<ul>
+  <li>Use o mesmo visual em todas as peças da campanha: cores, fonte e estilo de foto da sua marca. Assim o cliente reconhece a sua oferta no meio de tantas outras.</li>
+  <li>Mostre o preço e as condições na própria imagem ou na legenda. Quem precisa perguntar o preço muitas vezes desiste.</li>
+  <li>Deixe o link da landing page ou do WhatsApp na bio e nos stories.</li>
+  <li>Atualize o seu <a href="/blog/perfil-da-empresa-no-google/">Perfil da Empresa no Google</a> com o horário especial e fotos da campanha, para quem procura a loja pelo Google Maps.</li>
+</ul>
+
+<h2>Black Friday e o Código de Defesa do Consumidor</h2>
+<p>Promoção mal explicada vira reclamação. Estes são os cuidados que a lei pede de quem vende:</p>
+<ul>
+  <li><strong>Desconto de verdade.</strong> O Código de Defesa do Consumidor proíbe a publicidade enganosa (art. 37). Subir o preço antes da data para “dar desconto” depois, a famosa “metade do dobro”, é prática que os Procons apontam como enganosa e fiscalizam nessa época.</li>
+  <li><strong>Informações claras na venda pela internet.</strong> O Decreto 7.962/2013 exige que o site mostre nome da empresa, CNPJ, endereço e contato, as características do produto, as despesas extras (como o frete) separadas do preço e as condições da oferta, inclusive as restrições.</li>
+  <li><strong>Direito de arrependimento.</strong> Em compras feitas fora da loja física, como pela internet ou pelo WhatsApp, o cliente pode desistir em até 7 dias, contados da compra ou do recebimento do produto (art. 49 do CDC). Explique como ele pode fazer isso.</li>
+  <li><strong>Canal de atendimento.</strong> O mesmo decreto pede um canal eletrônico para dúvidas, reclamações e cancelamentos, com resposta em até cinco dias.</li>
+</ul>
+
+<h2>Checklist da Black Friday para pequenas empresas</h2>
+<ul>
+  <li>Data e horário da promoção definidos e divulgados.</li>
+  <li>Três ou quatro ofertas com estoque garantido e margem calculada.</li>
+  <li>Preço anterior real e desconto verdadeiro.</li>
+  <li>Landing page ou página da campanha no ar e testada no celular.</li>
+  <li>Frete, prazo de entrega e formas de pagamento informados.</li>
+  <li>CNPJ, endereço e contato visíveis no site.</li>
+  <li>Política de troca e de arrependimento explicada.</li>
+  <li>Posts, stories e imagens do WhatsApp no padrão visual da marca.</li>
+  <li>Respostas prontas para as perguntas mais comuns.</li>
+</ul>
+
+<h2>Perguntas frequentes</h2>
+
+<h2>Quando é a Black Friday 2026?</h2>
+<p>A Black Friday 2026 é na sexta-feira, 27 de novembro. Muitas empresas estendem as ofertas pelo fim de semana ou fazem ações ao longo de novembro.</p>
+
+<h2>Pequena empresa precisa de site para participar da Black Friday?</h2>
+<p>Não é obrigatório: dá para vender pelo WhatsApp, pelas redes sociais ou na loja física. Mas uma landing page com as ofertas reúne preços e condições num endereço só, que você pode divulgar em todos os canais.</p>
+
+<h2>O cliente pode desistir de uma compra feita na Black Friday?</h2>
+<p>Sim, se a compra foi feita fora da loja física, como pela internet, por telefone ou pelo WhatsApp. O artigo 49 do Código de Defesa do Consumidor garante 7 dias para desistir, contados da compra ou do recebimento do produto.</p>
+
+<h2>O que é a “metade do dobro” na Black Friday?</h2>
+<p>É aumentar o preço antes da data para depois anunciar um desconto que só leva o produto de volta ao valor normal. Os Procons consideram a prática enganosa e fiscalizam as ofertas nessa época.</p>
+
+<p>Quer uma landing page e peças de campanha prontas para a Black Friday? <a href="/#orcamento">Peça um orçamento personalizado</a> e receba a resposta em até 24h. Identidade visual, site e redes sociais no mesmo padrão profissional.</p>
+`,
+  },
+  {
     slug: "email-corporativo-dominio-proprio",
     tituloSeo: "Como criar e-mail corporativo com domínio próprio",
     titulo: "E-mail corporativo com domínio próprio: como criar o da sua empresa",
