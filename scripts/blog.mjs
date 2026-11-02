@@ -11,6 +11,93 @@
 
 export const POSTS = [
   {
+    slug: "instagram-para-empresas",
+    tituloSeo: "Instagram para empresas: guia prático",
+    titulo: "Instagram para empresas: como usar o perfil para atrair clientes",
+    descricao:
+      "Instagram para empresas: como configurar o perfil, o que postar e como aparecer no Google para atrair clientes. Veja o passo a passo e o checklist.",
+    categoria: "Redes sociais",
+    data: "2026-11-02",
+    publicado: true,
+    servico: "design-para-redes-sociais",
+    capa: { file: "capa-instagram-para-empresas-1200x630.jpg", alt: "Celular com feed desfocado sobre mesa escura ao lado de um caderno, ilustrando o Instagram para empresas", width: 1200, height: 630 },
+    corpo: `
+<p>Para usar o Instagram para empresas e atrair clientes, comece pelo básico: conta profissional, bio que diga o que você faz e para quem, um caminho fácil até o contato e posts que respondam às dúvidas de quem quer comprar. Constância e padrão visual fazem o resto.</p>
+<p>Neste guia você vê por que o Instagram pesa tanto para o pequeno negócio, como montar o perfil, o que postar, como seus posts podem aparecer no Google e um checklist para revisar o perfil hoje mesmo.</p>
+
+<h2>Por que o Instagram importa para a pequena empresa</h2>
+<p>O cliente que ouviu falar de você costuma fazer o mesmo caminho: procura o perfil, olha os últimos posts e decide se manda mensagem. O Instagram virou uma espécie de vitrine e de prova de que a empresa existe e está ativa.</p>
+<p>Os números confirmam. Na 9ª edição da Pesquisa Pulso dos Pequenos Negócios, do Sebrae, feita entre novembro e dezembro de 2024, o Instagram apareceu entre os canais utilizados por 60% dos donos de pequenos negócios, à frente do Facebook, com 34%. O WhatsApp lidera, com 81%. A mesma pesquisa mostra que 48% dos pequenos negócios já pagaram por propaganda nas redes sociais ou na internet.</p>
+<p>Ou seja: o Instagram e o WhatsApp andam juntos. O perfil atrai e convence, a conversa fecha a venda.</p>
+
+<h2>Como configurar o perfil comercial no Instagram</h2>
+<p>Antes de pensar em post, arrume a casa. Quem chega ao seu perfil decide em poucos segundos se fica ou vai embora.</p>
+<ol>
+  <li><strong>Use uma conta profissional.</strong> Ao mudar para a conta comercial, você escolhe a categoria da empresa, acompanha o desempenho dos posts com dados (os insights), pode mostrar suas informações de contato e criar anúncios, segundo a Meta.</li>
+  <li><strong>Escolha um nome fácil de achar.</strong> O nome de usuário deve ser o da marca. No campo “nome”, vale incluir o que você faz, como “Clínica Exemplo · Fisioterapia”.</li>
+  <li><strong>Escreva uma bio que responda três perguntas:</strong> o que você faz, para quem e onde atende. Termine com uma chamada clara, como “Peça seu orçamento pelo link”.</li>
+  <li><strong>Coloque um link útil.</strong> Seu site, uma <a href="/landing-page/">landing page</a> ou o WhatsApp. O link da bio é a porta de saída do perfil para a venda.</li>
+  <li><strong>Use a foto de perfil certa.</strong> O símbolo da marca, legível mesmo bem pequeno.</li>
+  <li><strong>Organize os destaques.</strong> Serviços, trabalhos feitos, depoimentos, como funciona e contato. Os destaques respondem às dúvidas antes da primeira mensagem.</li>
+</ol>
+
+<h2>O que postar no Instagram da empresa</h2>
+<p>A pergunta mais comum de quem começa é “o que eu posto?”. Uma regra simples: poste o que o seu cliente pergunta antes de comprar. Algumas ideias que funcionam para quase todo negócio:</p>
+<ul>
+  <li><strong>Dúvidas frequentes:</strong> cada pergunta que você responde no WhatsApp pode virar um post ou um carrossel.</li>
+  <li><strong>Antes e depois e trabalhos feitos:</strong> mostram o resultado do serviço melhor do que qualquer texto.</li>
+  <li><strong>Bastidores:</strong> a equipe, o processo, o cuidado com os detalhes. Isso gera confiança.</li>
+  <li><strong>Depoimentos reais:</strong> sempre com autorização do cliente.</li>
+  <li><strong>Ofertas e datas sazonais:</strong> Natal, Black Friday, volta às aulas. Planeje com antecedência.</li>
+  <li><strong>Reels curtos:</strong> uma dica, um passo a passo ou um bastidor em poucos segundos.</li>
+</ul>
+<p>Mais importante do que postar todo dia é manter um ritmo que você consegue cumprir. Um perfil com o último post de meses atrás passa a impressão de empresa parada.</p>
+
+<figure class="post-figure"><img src="/blog/instagram-para-empresas/corpo-instagram-para-empresas-1520x855.jpg" alt="Quadro com dados sobre Instagram para empresas: 60% dos pequenos negócios usam o Instagram, 81% usam o WhatsApp e 48% já pagaram por propaganda na internet" width="1520" height="855" loading="lazy"></figure>
+
+<h2>Instagram no Google: seus posts também podem ser encontrados</h2>
+<p>Uma mudança de julho de 2025 deixou o Instagram ainda mais importante para empresas: fotos, vídeos, Reels e carrosséis públicos de contas profissionais, de pessoas maiores de 18 anos, passaram a poder aparecer nos resultados de buscadores como o Google. Stories, destaques, comentários e mensagens ficam de fora.</p>
+<p>Na prática, legenda e texto alternativo agora também contam para quem procura no Google. Algumas dicas:</p>
+<ul>
+  <li>Escreva legendas que expliquem o assunto com as palavras que o cliente usaria na busca, como “limpeza de pele em Brasília” em vez de só “resultado de hoje”.</li>
+  <li>Preencha o texto alternativo das imagens nas configurações avançadas do post.</li>
+  <li>Confira nas configurações de privacidade se a opção de aparecer em mecanismos de busca está ativada.</li>
+</ul>
+<p>O Instagram não substitui o site nem o <a href="/blog/perfil-da-empresa-no-google/">Perfil da Empresa no Google</a>. Os três se completam: o Perfil aparece para quem busca no Maps, o site explica tudo com calma e o Instagram mostra a empresa viva no dia a dia.</p>
+
+<h2>Padrão visual: o perfil precisa parecer uma marca</h2>
+<p>Quem visita o perfil vê nove ou doze posts de uma vez. Se cada um tem uma cor, uma fonte e um estilo, a empresa parece improvisada, mesmo que o trabalho seja ótimo. Use as cores, as fontes e os elementos da sua identidade visual em modelos para cada tipo de post. Explicamos isso em detalhes em <a href="/blog/padrao-visual-nas-redes-sociais/">como manter o padrão visual da sua marca nas redes sociais</a>.</p>
+
+<h2>Checklist do Instagram para empresas</h2>
+<ul>
+  <li>Conta profissional ativada e categoria correta.</li>
+  <li>Nome e @ fáceis de achar, com o que você faz no campo “nome”.</li>
+  <li>Bio com o que faz, para quem, onde atende e uma chamada.</li>
+  <li>Link da bio levando ao site, à landing page ou ao WhatsApp.</li>
+  <li>Destaques com serviços, trabalhos, depoimentos e contato.</li>
+  <li>Posts que respondem às dúvidas dos clientes, num ritmo que você mantém.</li>
+  <li>Legendas com as palavras que o cliente busca e texto alternativo nas imagens.</li>
+  <li>Modelos de post no padrão visual da marca.</li>
+</ul>
+
+<h2>Perguntas frequentes</h2>
+
+<h2>Conta comercial ou pessoal: qual usar na empresa?</h2>
+<p>A conta profissional. Com ela você escolhe a categoria do negócio, vê os dados de desempenho dos posts, mostra as informações de contato e pode criar anúncios. Só contas profissionais públicas podem ter os posts indexados pelos buscadores.</p>
+
+<h2>Com que frequência a empresa deve postar no Instagram?</h2>
+<p>Não existe um número certo para todos. O que pesa é a constância: escolha um ritmo que você consegue manter por meses, como dois ou três posts por semana, e use os stories para o dia a dia.</p>
+
+<h2>Posts do Instagram aparecem no Google?</h2>
+<p>Sim. Desde julho de 2025, fotos, vídeos e Reels públicos de contas profissionais de maiores de 18 anos podem aparecer em buscadores como o Google. Stories e destaques não entram. A opção pode ser desligada nas configurações de privacidade.</p>
+
+<h2>Preciso de site se já tenho Instagram?</h2>
+<p>Vale ter os dois. O perfil depende das regras e do alcance da plataforma, enquanto o site é seu, aparece no Google e reúne tudo o que o cliente precisa para decidir. Veja como funciona a <a href="/criacao-de-sites/">criação de sites</a> na Reload.</p>
+
+<p>Quer posts, carrosséis e stories no padrão da sua marca? <a href="/#orcamento">Peça um orçamento personalizado</a> e receba a resposta em até 24h. Identidade visual, site e redes sociais no mesmo padrão profissional.</p>
+`,
+  },
+  {
     slug: "black-friday-pequenas-empresas",
     tituloSeo: "Black Friday para pequenas empresas 2026",
     titulo: "Black Friday para pequenas empresas: como se preparar em 2026",
