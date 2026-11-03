@@ -11,6 +11,97 @@
 
 export const POSTS = [
   {
+    slug: "colocar-site-no-google",
+    tituloSeo: "Como colocar meu site no Google",
+    titulo: "Como colocar meu site no Google: passo a passo para aparecer na busca",
+    descricao:
+      "Como colocar meu site no Google: use o Search Console, envie o sitemap e veja o que fazer se o site não aparece. Passo a passo e checklist grátis.",
+    categoria: "SEO e Google",
+    data: "2026-11-03",
+    publicado: true,
+    servico: "criacao-de-sites",
+    capa: { file: "capa-colocar-site-no-google-1200x630.jpg", alt: "Notebook aberto com página de busca desfocada sobre mesa escura, ilustrando como colocar meu site no Google", width: 1200, height: 630 },
+    corpo: `
+<p>Para colocar seu site no Google, você não precisa pagar nada: o Google encontra sites sozinho. O que você pode fazer é acelerar e conferir o processo, cadastrando o site no Google Search Console, enviando o sitemap e pedindo a indexação das páginas principais.</p>
+<p>Neste guia você vê como saber se o site já aparece, o passo a passo no Search Console, quanto tempo leva, por que um site às vezes não aparece e um checklist para revisar o seu.</p>
+
+<h2>Meu site já está no Google? Faça o teste</h2>
+<p>Antes de qualquer coisa, descubra se o Google já conhece o seu site. Abra o Google e pesquise <strong>site:</strong> seguido do seu domínio, sem espaço. Por exemplo: <strong>site:suaempresa.com.br</strong>.</p>
+<ul>
+  <li><strong>Apareceram páginas do seu site:</strong> ele já está no índice do Google. O trabalho agora é melhorar a posição.</li>
+  <li><strong>Não apareceu nada:</strong> o Google ainda não indexou o site, ou algo está impedindo. Siga o passo a passo abaixo.</li>
+</ul>
+<p>O próprio Google avisa que esse teste nem sempre mostra todas as páginas indexadas. Ele serve como um primeiro termômetro.</p>
+
+<h2>Como colocar meu site no Google em 5 passos</h2>
+<p>Segundo o Google, na maioria das vezes basta publicar o site na internet para ele ser encontrado. Mesmo assim, estes passos ajudam o Google a descobrir suas páginas mais rápido e mostram se há algum problema.</p>
+<ol>
+  <li><strong>Garanta o básico do site.</strong> Domínio próprio, site no ar, aberto sem senha e com texto de verdade, não só imagens. Se o conteúdo importante está apenas em fotos ou vídeos, o Google tem mais dificuldade para entender a página.</li>
+  <li><strong>Cadastre o site no Google Search Console.</strong> É um serviço gratuito do Google. Entre com uma Conta do Google, adicione o endereço do site e confirme que ele é seu, seguindo as instruções da própria ferramenta.</li>
+  <li><strong>Envie o sitemap.</strong> O sitemap é um arquivo que lista as páginas do site, normalmente em um endereço como suaempresa.com.br/sitemap.xml. No Search Console, abra o relatório <strong>Sitemaps</strong>, cole o endereço e envie.</li>
+  <li><strong>Peça a indexação das páginas principais.</strong> Use a <strong>Inspeção de URL</strong>: cole o endereço da página, veja se ela já está no Google e, se não estiver, peça o rastreamento. Faça isso com a home e as páginas de serviço.</li>
+  <li><strong>Divulgue o endereço.</strong> Coloque o link do site no seu <a href="/blog/perfil-da-empresa-no-google/">Perfil da Empresa no Google</a>, no Instagram e na assinatura do e-mail. Links de outros lugares ajudam o Google a chegar até você.</li>
+</ol>
+
+<h2>Quanto tempo demora para o site aparecer no Google?</h2>
+<p>Não existe um prazo fixo. O Google diz que pode levar algumas semanas para notar um site novo ou as mudanças em um site que já existe. No guia de SEO para iniciantes, ele explica que algumas mudanças fazem efeito em poucas horas e outras podem levar meses.</p>
+<p>Por isso, depois de seguir os passos, dê tempo ao processo. Vale acompanhar pelo Search Console, que mostra quais páginas já foram indexadas e quais tiveram algum problema.</p>
+<p>Um ponto importante: estar no Google não é o mesmo que aparecer em primeiro lugar. A posição depende da concorrência, da qualidade do conteúdo e de como o site funciona. Ninguém pode garantir a primeira posição.</p>
+
+<figure class="post-figure"><img src="/blog/colocar-site-no-google/corpo-colocar-site-no-google-1520x855.jpg" alt="Quadro com os limites das Core Web Vitals para colocar meu site no Google com bom desempenho: carregamento em até 2,5 s, resposta em até 200 ms e estabilidade de até 0,1" width="1520" height="855" loading="lazy"></figure>
+
+<h2>Por que meu site não aparece no Google?</h2>
+<p>Se o site já está no ar há algumas semanas e ainda não aparece, as causas mais comuns, segundo o Google, são:</p>
+<ul>
+  <li><strong>Site muito novo:</strong> o Google ainda não passou por ele.</li>
+  <li><strong>Nenhum link apontando para o site:</strong> sem links em outros lugares, fica mais difícil o Google descobrir o endereço.</li>
+  <li><strong>Conteúdo só em imagem:</strong> páginas sem texto são difíceis de entender.</li>
+  <li><strong>Bloqueios:</strong> página que pede login ou configuração que impede o Google de acessar. Um teste simples é abrir o site numa janela anônima.</li>
+</ul>
+<p>O Search Console ajuda a encontrar esses problemas. O relatório de páginas mostra o que foi indexado e o motivo das páginas que ficaram de fora.</p>
+
+<h2>Como melhorar a posição do site no Google</h2>
+<p>Depois que o site está indexado, alguns cuidados ajudam o Google e o cliente a entender o que você oferece. Todos estão no guia de SEO para iniciantes do próprio Google:</p>
+<ul>
+  <li><strong>Título único em cada página,</strong> claro e que descreva o conteúdo, como “Fisioterapia esportiva em Brasília”.</li>
+  <li><strong>Descrição curta e própria</strong> para cada página, com os pontos mais importantes.</li>
+  <li><strong>Endereços legíveis,</strong> como /servicos/fisioterapia em vez de números aleatórios.</li>
+  <li><strong>Texto alternativo nas imagens,</strong> explicando o que cada foto mostra.</li>
+  <li><strong>Conteúdo útil para o cliente.</strong> Para o Google, esse é o ponto que mais pesa. Responda às dúvidas que você ouve no dia a dia.</li>
+</ul>
+<p>A experiência no site também conta. O Google mede três sinais, as Core Web Vitals: o carregamento do maior elemento da página deve acontecer em até 2,5 segundos, a resposta a um toque ou clique em até 200 milissegundos e a estabilidade visual deve ficar em 0,1 ou menos. O Search Console tem um relatório só para isso, com dados de visitas reais.</p>
+<p>Se você ainda está decidindo o formato do site, veja <a href="/blog/site-institucional-ou-landing-page/">site institucional ou landing page: qual a sua empresa precisa</a>.</p>
+
+<h2>Checklist para colocar o site no Google</h2>
+<ul>
+  <li>Site no ar, com domínio próprio, sem senha e com texto nas páginas.</li>
+  <li>Teste <strong>site:seudominio.com.br</strong> feito no Google.</li>
+  <li>Site cadastrado e confirmado no Google Search Console.</li>
+  <li>Sitemap enviado no relatório Sitemaps.</li>
+  <li>Home e páginas de serviço enviadas pela Inspeção de URL.</li>
+  <li>Link do site no Perfil da Empresa, no Instagram e no e-mail.</li>
+  <li>Título, descrição e texto alternativo em cada página.</li>
+  <li>Relatório de Core Web Vitals conferido no Search Console.</li>
+</ul>
+
+<h2>Perguntas frequentes</h2>
+
+<h2>Preciso pagar para colocar meu site no Google?</h2>
+<p>Não. O Google encontra os sites sozinho, e o Google Search Console é um serviço gratuito. Desconfie de quem cobra para “cadastrar” o site no Google ou para vender links: o próprio Google pede que você não pague por links.</p>
+
+<h2>É obrigatório usar o Google Search Console?</h2>
+<p>Não. O Google diz que não é preciso se inscrever no Search Console para aparecer na busca. Mas a ferramenta mostra se há erros, quais páginas estão indexadas e quais buscas levam as pessoas até você.</p>
+
+<h2>Enviar o sitemap garante que o site vai aparecer?</h2>
+<p>Não garante. Para o Google, o sitemap é uma dica que pode acelerar a descoberta das páginas. Quem decide o que entra no índice é o próprio Google.</p>
+
+<h2>O site precisa funcionar bem no celular?</h2>
+<p>Sim. O Google avalia as Core Web Vitals separadamente no celular e no computador, então o site precisa abrir rápido e sem pular na tela do telefone. Na <a href="/criacao-de-sites/">criação de sites</a> da Reload, o layout se adapta ao celular, ao tablet e ao computador e é feito para o Google, com títulos bem estruturados e carregamento rápido.</p>
+
+<p>Quer um site pronto para aparecer no Google e passar confiança a quem chega? <a href="/#orcamento">Peça um orçamento personalizado</a> e receba a resposta em até 24h. Identidade visual, site e redes sociais no mesmo padrão profissional.</p>
+`,
+  },
+  {
     slug: "instagram-para-empresas",
     tituloSeo: "Instagram para empresas: guia prático",
     titulo: "Instagram para empresas: como usar o perfil para atrair clientes",
