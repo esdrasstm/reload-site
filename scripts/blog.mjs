@@ -11,6 +11,89 @@
 
 export const POSTS = [
   {
+    slug: "registro-de-marca-inpi",
+    tituloSeo: "Registro de marca no INPI: como fazer e quanto custa",
+    titulo: "Registro de marca no INPI: como proteger o nome e o logotipo da sua empresa",
+    descricao:
+      "Veja como fazer o registro de marca no INPI: quanto custa em 2026, passo a passo, tipos de marca e o que conferir antes de criar o logotipo.",
+    categoria: "Identidade visual",
+    data: "2026-11-12",
+    publicado: true,
+    servico: "identidade-visual",
+    capa: { file: "capa-registro-de-marca-inpi-1200x630.jpg", alt: "Mesa de designer com esboços de símbolos, carimbo e amostras de cor, ilustrando o registro de marca no INPI", width: 1200, height: 630 },
+    corpo: `
+<p>Para fazer o registro de marca no INPI, você pesquisa se o nome está livre, paga a taxa (a partir de R$ 440 por classe para MEI, microempresa e empresa de pequeno porte) e envia o pedido pela internet, no sistema e-Marcas. O registro vale por 10 anos, pode ser renovado e garante o uso exclusivo da marca em todo o Brasil.</p>
+<p>Vale entender isso antes de investir em logotipo, fachada, embalagem e site. Em 2025, o INPI recebeu quase 505 mil pedidos de registro de marcas, o maior volume já registrado pelo instituto, e a maioria veio de microempreendedores individuais e pequenas empresas. Quanto mais gente registra, maior a chance de o nome que você escolheu já ter dono.</p>
+
+<h2>O que é o registro de marca e por que ele importa</h2>
+<p>Marca é o sinal que identifica a origem de um produto ou serviço e o diferencia dos concorrentes: o nome, o símbolo ou os dois juntos. No Brasil, quem cuida desse registro é o Instituto Nacional da Propriedade Industrial (INPI).</p>
+<p>Pela Lei da Propriedade Industrial (Lei 9.279/96), a propriedade da marca se adquire pelo registro, que garante ao titular o uso exclusivo em todo o território nacional. Ou seja: abrir o CNPJ, comprar o domínio do site ou criar o perfil no Instagram não torna a marca sua. São cadastros diferentes, com finalidades diferentes.</p>
+<p>A proteção vale para os produtos ou serviços ligados à atividade de quem registrou. É por isso que o pedido é feito por classe, como você vai ver no passo a passo.</p>
+
+<h2>Marca nominativa, figurativa ou mista: qual registrar</h2>
+<p>O INPI aceita a marca em diferentes formas de apresentação. As três mais usadas por empresas são:</p>
+<ul>
+  <li><strong>Nominativa:</strong> formada só por palavras, letras ou números, sem desenho. Protege o nome.</li>
+  <li><strong>Figurativa:</strong> formada por desenho, imagem ou símbolo, sem o nome.</li>
+  <li><strong>Mista:</strong> combina nome e elemento visual, ou traz o nome com grafia estilizada. É o caso de um logotipo com símbolo e nome juntos.</li>
+</ul>
+<p>Se o pedido for de marca mista ou figurativa, a imagem vai anexada ao formulário. Por isso faz diferença chegar a essa etapa com o logotipo definido, e não com um rascunho que será trocado em poucos meses.</p>
+
+<h2>Quanto custa registrar uma marca no INPI em 2026</h2>
+<p>Os valores abaixo são da tabela de retribuições do INPI para serviços de marcas (Portaria GM/MDIC nº 110/2025), consultada em novembro de 2026. O preço é por classe, isto é, por grupo de produtos ou serviços em que a marca será protegida.</p>
+<ul>
+  <li><strong>Pedido com especificação pré-aprovada:</strong> R$ 880 por classe, ou R$ 440 com desconto.</li>
+  <li><strong>Pedido com especificação de livre preenchimento:</strong> R$ 1.720 por classe, ou R$ 860 com desconto.</li>
+  <li><strong>Primeiros 10 anos de vigência e certificado de registro:</strong> R$ 0.</li>
+  <li><strong>Prorrogação do registro no prazo normal:</strong> R$ 1.000 por classe, ou R$ 500 com desconto.</li>
+</ul>
+<p>O desconto de 50% vale, entre outros, para microempreendedores individuais, microempresas, empresas de pequeno porte e pessoas físicas, nas condições descritas na própria tabela. Depois que o pedido é deferido, não há uma segunda taxa para receber o registro.</p>
+<p>Esses são os valores oficiais do pedido. Exigências, recursos e outras petições que surgirem no caminho têm taxas próprias. E, se você contratar um profissional para cuidar do processo, os honorários são combinados à parte.</p>
+
+<figure class="post-figure"><img src="/blog/registro-de-marca-inpi/corpo-registro-de-marca-inpi-1520x855.jpg" alt="Quadro com dados do registro de marca no INPI: R$ 440 por classe com desconto, 10 anos de vigência, 60 dias para oposição e 45 classes de produtos e serviços" width="1520" height="855" loading="lazy"></figure>
+
+<h2>Como registrar uma marca: passo a passo</h2>
+<ol>
+  <li><strong>Pesquise se a marca está livre.</strong> Na busca de marcas do INPI, procure nomes iguais ou parecidos com o seu para produtos ou serviços semelhantes.</li>
+  <li><strong>Defina a classe.</strong> O INPI usa a Classificação de Nice, com 45 classes: de 1 a 34 para produtos e de 35 a 45 para serviços. Prefira os itens da lista pré-aprovada: além de custar menos, a especificação livre traz mais risco de exigências.</li>
+  <li><strong>Faça o cadastro no e-INPI.</strong> É o acesso aos serviços do instituto pela internet.</li>
+  <li><strong>Emita e pague a GRU.</strong> A guia precisa estar paga antes do envio do pedido. Guarde o número.</li>
+  <li><strong>Envie o pedido pelo e-Marcas.</strong> Preencha o formulário on-line com o número da GRU. Se a marca tiver imagem, anexe o arquivo do logotipo.</li>
+  <li><strong>Acompanhe o processo.</strong> As decisões saem na Revista da Propriedade Industrial (RPI), publicada às terças-feiras. Depois que o pedido é publicado, terceiros têm 60 dias para apresentar oposição. Com o deferimento, a marca é concedida e o certificado é emitido.</li>
+</ol>
+<p>O passo a passo completo está no guia básico de marcas, no site do INPI. Se preferir, um profissional de propriedade intelectual pode conduzir o processo para você.</p>
+
+<h2>Antes de criar o logotipo, confira se o nome está livre</h2>
+<p>A ordem que evita retrabalho é simples: escolher o nome, pesquisar no INPI, criar a identidade visual e só então fazer o pedido de registro. Trocar de nome depois de imprimir os cartões, adesivar a fachada e publicar o site sai bem mais caro do que uma pesquisa no começo.</p>
+<p>Aproveite para conferir também o domínio do site, que serve ainda para o <a href="/blog/email-corporativo-dominio-proprio/">e-mail corporativo com domínio próprio</a>, e o nome de usuário nas redes sociais. Nome igual em todos os lugares ajuda o cliente a encontrar você.</p>
+<p>Do lado do design, o logotipo é só uma parte do trabalho. Cores, tipografia e aplicações completam a marca, como explicamos em <a href="/blog/identidade-visual-alem-do-logotipo/">identidade visual: por que ela vai muito além do logotipo</a>.</p>
+<p>Na Reload Estúdios, a nossa parte é a criação: o logotipo e a identidade visual completa, do conceito às aplicações. O pedido no INPI é feito por você ou por um profissional da área, já com a marca pronta em mãos. Conheça o serviço de <a href="/identidade-visual/">identidade visual e criação de logotipo</a>.</p>
+
+<h2>Depois do registro: cuidados para não perder a marca</h2>
+<ul>
+  <li><strong>Renove a cada 10 anos.</strong> O pedido de prorrogação é feito no último ano de vigência. Quem perde o prazo ainda pode pedir nos 6 meses seguintes, pagando uma retribuição adicional.</li>
+  <li><strong>Use a marca.</strong> Depois de 5 anos da concessão, qualquer pessoa com legítimo interesse pode pedir a caducidade do registro se a marca não tiver sido usada no Brasil ou se o uso tiver sido interrompido por mais de 5 anos seguidos.</li>
+  <li><strong>Use a marca como ela foi registrada.</strong> A lei também prevê a caducidade quando a marca é usada com uma modificação que altera o seu caráter distintivo original. Vai redesenhar o logotipo? Avalie com um profissional se é o caso de fazer um novo pedido.</li>
+</ul>
+
+<h2>Perguntas frequentes</h2>
+
+<h2>Quanto custa registrar uma marca no INPI?</h2>
+<p>Pela tabela do INPI consultada em novembro de 2026, o pedido com especificação pré-aprovada custa R$ 880 por classe, ou R$ 440 com o desconto de 50% para MEI, microempresas, empresas de pequeno porte e outros grupos. Não há taxa de concessão depois do deferimento.</p>
+
+<h2>Quanto tempo vale o registro de marca?</h2>
+<p>O registro vigora por 10 anos, contados da data da concessão, e pode ser prorrogado por períodos iguais e sucessivos. O pedido de prorrogação é feito no último ano de vigência.</p>
+
+<h2>Ter CNPJ ou domínio garante o direito sobre a marca?</h2>
+<p>Não. Pela Lei 9.279/96, a propriedade da marca se adquire pelo registro no INPI. A lei prevê um direito de precedência para quem já usava a marca de boa-fé no país há pelo menos 6 meses, mas o caminho mais seguro é não depender disso e fazer o pedido.</p>
+
+<h2>Devo registrar o nome ou o logotipo?</h2>
+<p>Depende do que você quer proteger. A marca nominativa protege o nome. A marca mista protege o conjunto de nome e elemento visual, e a figurativa, só o símbolo. Na dúvida sobre a melhor estratégia para o seu caso, consulte um profissional de propriedade intelectual.</p>
+
+<p>Este conteúdo é informativo e não substitui a orientação do INPI ou de um profissional da área. Quer chegar ao pedido de registro com uma marca pronta e bem resolvida? <a href="/#orcamento">Peça um orçamento personalizado</a> e receba a resposta em até 24h. Identidade visual, site e redes sociais no mesmo padrão profissional.</p>
+`,
+  },
+  {
     slug: "colocar-site-no-google",
     tituloSeo: "Como colocar meu site no Google",
     titulo: "Como colocar meu site no Google: passo a passo para aparecer na busca",
